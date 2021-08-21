@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Work-out</title>
+    <link rel="stylesheet" href="css/style.c">
+    <link rel="stylesheet" href="application.css">
+  </head>
+
+  <body>
+  <div class= "top"><h1>トレーニングメモ</h1></div>
+    <div id="mainvisual">
+      <%= image_tag "photo-1540474238286-8fd6702d30d9.jpeg", class:"main" %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "btn" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+  </div>
+    </div>
+
+
+
+    <header id="header">
+      <h1 class="site-title">
+      <%= image_tag "images.jpeg", class:"sab" %>
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="#concept">Concept</a></li>
+          <li><a href="#work">Work</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <main>
+        <section id="concept" class="content">
+          <div class="img">
+          <%= image_tag "photo-1620188526357-ff08e03da266.jpeg", class:"sab-one" %>
+          </div>
+          <div class="text">
+            <h2 class="section-title">~~~~~トレーニングをすることで~~~~~</h2>
+            <p>・基礎代謝がアップして太りにくい体に</p>
+            <p>・美しい姿勢をキープできる</p>
+            <p>・有酸素運動の効果を上げる</p>
+            <p>・こり・むくみ・冷え性の改善</p> 
+            <p>・睡眠の質を上げる</p>
+            <p>・ストレス解消</p>
+          </div>
+        </section>
+      </main>
+      <footer id="footer">
+        <div class="logo">
+        </div>
+        <p>&copy; shos3 work out</p>
+      </footer>
+    </div>
+  </body>
+</html>
