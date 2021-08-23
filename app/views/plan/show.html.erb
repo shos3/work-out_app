@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>記録</strong>
+  <%#= @plan.title %>
+</p>
+
+<p>
+  <strong>時間</strong>
+  <%#= @plan.start_time.strftime("%Y-%m-%d %H:%M") %>
+</p>
+
+<p>
+  <strong>内容</strong>
+  <%#= @plan.content %>
+</p>
+<div id="input_pluralBox">
+    <div id="input_plural">
+        <input type="text" class="form-control" placeholder="サンプルテキストサンプルテキストサンプルテキスト">
+        <input type="button" value="＋" class="add pluralBtn">
+        <input type="button" value="－" class="del pluralBtn">
+    </div>
+</div>
+<%= link_to '戻る', plan_index_path %> 
+<%= link_to '保存する', plan_index_path, method: :post%> 
+
+<%= form_with model: @plan, url: plan_path, class: 'form' do |f| %>
+    <%= f.label :日付を選択してください, class: 'lavel' %>
+    <%= f.date_field :date, class: 'date-select' %>
+      <%= f.label :予定を入力, class: 'lavel' %>
+  <%= f.text_field :plan, class: 'text-input' %>
+  <%= f.submit '保存' %>
+  <% end %>
