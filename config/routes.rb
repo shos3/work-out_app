@@ -7,6 +7,5 @@ Rails.application.routes.draw do
   root 'application#index'
   resources :application
   resources :plan, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  get "plan/show"  
 end
 
