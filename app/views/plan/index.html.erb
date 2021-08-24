@@ -5,6 +5,8 @@
 
 
 <!DOCTYPE html>
+<p id="notice"><%= notice %></p>
+
 <html lang="ja">
   <head>
     <meta charset="utf-8">
@@ -12,15 +14,16 @@
     <link rel="stylesheet" href=plans/index.scss>
   </head>
 
-
+<%= current_user.nickname %>さんがログイン中<br>      <%#%>
 <div class="nickname">
 <%= "こんにちは" "#{current_user.nickname}" "さん" %>
 </div>
 <h3>〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜</h3>
 <li><%= link_to 'ログアウト', destroy_user_session_path, class: "sign-out" %></li>
-
+<br>
 <li><%= link_to 'トレーニング記録へ',  new_plan_path,method: :get, class: "btn" %></li>
-
+<br>
+<%= link_to 'トレーニング共有一覧へ',   plan_tweet_index_path(:plan_id), class: "btn" %></li>
 
 
 
@@ -28,34 +31,36 @@
 <div class= "carender">
 <h4>カレンダー</h4>
 </div>
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+※カレンダーの日付更新はAM:09:00に本日の日付になります。
+<div class="tatal">今までの総種目トレーニング数は↓</div>
+<%= current_user.plans.where('created_at > ?', Date.today).count %>
+<%#= current_user.plan %>
+
+
+
+<%# if @plans.user_id == current_user.id %>
+
+
 
   <tbody>
     <% @plans.each do |plan| %>
       <tr>
-        <td><%= plan.title %></td>
-        <td><%= plan.start_time.strftime("%Y-%m-%d %H:%M") %></td>
-        <td><%= link_to 'Show', plan %></td>
-        <td><%= link_to 'Edit', edit_plan_path(plan.id) %></td>
-        <td><%= link_to 'Destroy',plan_path(plan.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= plan.event %></td>
+        <td><%#= plan&.start_time&.strftime("%Y-%m-%d %H:%M") %></td>
+        <td><%#= link_to 'Show', blog %></td>
+        <td><%#= link_to 'Edit', edit_blog_path(blog.id) %></td>
+        <td><%#= link_to 'Destroy',blog_path(blog.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
-</table>
-
 <br>
-
 <%= month_calendar events: @plans do |date, plans| %>
   <%= date.day %>
-
   <% plans.each do |plan| %>
     <div>
-      <%= link_to plan.title, plan %>
+    <%# if user_signed_in? == current_user.id %>
+      <%= link_to plan.event, plan %>
     </div>
   <% end %>
 <% end %>
+<%# end %>

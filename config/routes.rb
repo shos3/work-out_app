@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   }
   root 'application#index'
   resources :application
-  resources :plan, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :plan, only: [:index, :show, :new, :create, :edit, :update, :destroy]do
+  resources :tweet, only: [:index] 
+end
 end
 

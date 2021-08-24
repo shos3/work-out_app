@@ -15,8 +15,10 @@
 
 | Column             | Type   | Options                   |
 | ------------------ | ------ | -----------               |
-| plan               | string | null: false               |
 | date               | string | null: false               |
-
+| event              | string | null: false               |
+| number             | string | null: false               |
+| set                | string | null: false               |
+| time               | string | null: false               |
 
 - belongs_to :user
