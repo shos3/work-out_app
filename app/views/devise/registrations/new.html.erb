@@ -6,14 +6,27 @@
 
 
    <div class="field">
-        <%= f.label :nickname %> <em>(6 characters maximum)</em><br />
+        <%= f.label :ニックネーム %> <em>（最大6文字）</em><br />
         <%= f.text_field :nickname, autofocus: true, maxlength: "6" %>
       </div>
 
   <div class="field">
-    <%= f.label :age %><br />
-    <%= f.number_field :age %>
+    <%= f.label :年齢 %><br />
+    <%= f.number_field :age,{min: 0, max: 99}%>
   </div>
+
+
+
+
+<%#label for="tentacles">Number of tentacles (10-100):</label>
+
+<input type="number" id="tentacles" name="tentacles"
+       min="10" max="100">%>
+
+
+
+
+
 
   <div class="field">
     <%= f.label :メールアドレス %><br />
