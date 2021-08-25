@@ -32,13 +32,12 @@
 <h4>カレンダー</h4>
 </div>
 ※カレンダーの日付更新はAM:09:00に本日の日付になります。
-<div class="tatal">今までの総種目トレーニング数は↓</div>
-<%= current_user.plans.where('created_at > ?', Date.today).count %>
+<%#div class="tatal"><%= current_user.nickname %><%#さんの今までの総種目トレーニング数は↓</div>
+<%#= current_user.plans.where('created_at > ?', Date.today).count %>
 <%#= current_user.plan %>
 
 
 
-<%# if @plans.user_id == current_user.id %>
 
 
 
@@ -58,9 +57,10 @@
   <%= date.day %>
   <% plans.each do |plan| %>
     <div>
-    <%# if user_signed_in? == current_user.id %>
-      <%= link_to plan.event, plan %>
+    <% if  current_user.id == plan.user.id%>
+      <%= link_to "⚫︎" "#{plan.event}", plan %>
+      
     </div>
   <% end %>
 <% end %>
-<%# end %>
+<% end %>

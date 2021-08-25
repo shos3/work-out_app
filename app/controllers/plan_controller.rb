@@ -1,11 +1,13 @@
 class PlanController < ApplicationController
   before_action :authenticate_user!
+  
 
 def index
   @all_plans = Plan.all.includes(current_user.id)
   @user = User.find(current_user.id)
   @plans = Plan.all
   plan = Plan.new
+  #@plan.user_id = current_user.id
 end
 
 def new
