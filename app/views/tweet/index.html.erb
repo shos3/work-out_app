@@ -16,15 +16,22 @@
     <div class="box11">
 		<div class="name"><%= "#{tweet.user.nickname}" ":"%></div>
     <div class="tweet"><%= "#{tweet.text}"  %></div>
-		<%= image_tag "heart.png", class:"mai",width:"30",height:"30" %>
+		<%#= image_tag "heart.png", class:"mai",width:"30",height:"30" %>
 
 
   
-
-
-
-
-
+<%#if @tweet.like(current_user)%>
+    <%#= link_to tweet_like_path(@tweet), method: :delete do %>
+        <%#span style="color:red;">❤︎</span>
+    <%#end%>
+<%#else%>
+    <%#= link_to tweet_likes_path(@tweet), method: :post do %>
+        <%#span>❤︎</span>
+    <%#end%>
+<%#end%>
+<td id="like-<%= tweet.id %>">
+ <%= render partial: "like", locals: { tweet: tweet } %>
+</td>
 
 
 
