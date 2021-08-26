@@ -1,6 +1,6 @@
 <div class="space">トレーニング内容の共有スペース</div><br>
 
-  <%= link_to("投稿する",new_plan_tweet_path, class: "btn")  %></p>
+  <%= link_to("投稿ページへ",new_tweet_path, class: "btn")  %></p>
 <div class="contents row">
 <%#= tweet_lists(@tweets) %> 
 </div>
@@ -9,22 +9,31 @@
 
 
 
-
-!>投稿されたメッセージの表示</!>
+<div class="message">投稿メッセージ一覧</div>
 <div class = "center">
-<%#GetMessageDAO getmessagedao = new GetMessageDAO();%>
-<%#ArrayList<Map<Integer,String>> messagelist = getmessagedao.getMessage();%>
-<%#for(int i = 0; i<messagelist.size(); i++){%>
-	<%#= Map<Integer,String> list = messagelist.get(i);%>
-	<%#	String message =  list.get(1);%>
-	<%#	String time =  list.get(5);%>
-	<%#	String namefrom =  list.get(6);%>
-	<%#	String nameto =  list.get(7);%>
-<div class="activity-feed">
-<div class="feed-item">
-<div class="date">To:<%=%></div>
-<div class="text"><%=%></div>
-<div class="date">From:<%=%> (<%=%>)</div>
-</div>
-</div>
-<%#}%>
+<% @tweets.each do |tweet| %>
+ <div>
+    <div class="box11">
+		<div class="name"><%= "#{tweet.user.nickname}" ":"%></div>
+    <div class="tweet"><%= "#{tweet.text}"  %></div>
+		<%= image_tag "heart.png", class:"mai",width:"30",height:"30" %>
+
+
+  
+
+
+
+
+
+
+
+
+
+		<%= link_to("コメントする", "#", class: "btna") %>	
+		<% if current_user.id == tweet.user_id %>
+		<%= link_to("削除する", tweet_path(tweet.id), method: :delete, class: "btna") %>
+		<% end %>
+		</div>
+
+ </div>
+<% end %>

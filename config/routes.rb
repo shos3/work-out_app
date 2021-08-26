@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   }
   root 'application#index'
   resources :application
-  resources :plan, only: [:index, :show, :new, :create, :edit, :update, :destroy]do
-  resources :tweet, only: [:index, :new] 
-end
+  resources :plan, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :tweet, only: [:index, :new, :create, :show, :destroy] do
+    resources :likes, only: [:create, :destroy]
+  end
 end
 
