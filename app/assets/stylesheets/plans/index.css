@@ -24,6 +24,25 @@ color: rgb(109, 91, 91);
     font-weight: bold;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .carender{
   color:goldenrod;
   font-size :50px;
@@ -91,7 +110,7 @@ color: rgb(109, 91, 91);
   .wday-6 {}
 
   .today {
-    background: #FFFFC0
+    background: #52df45
   }
 
   .past {}

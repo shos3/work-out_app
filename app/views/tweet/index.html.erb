@@ -1,1 +1,46 @@
-aaaaaaa
+<div class="space">トレーニング内容の共有スペース</div><br>
+
+  <%= link_to("投稿ページへ",new_tweet_path, class: "btn")  %></p>
+<div class="contents row">
+<%#= tweet_lists(@tweets) %> 
+</div>
+<%= link_to("戻る", plan_index_path, class: "btn") %>
+
+
+
+
+<div class="message">投稿メッセージ一覧</div>
+<div class = "center">
+<% @tweets.each do |tweet| %>
+ <div>
+    <div class="box11">
+		<div class="name"><%= "#{tweet.user.nickname}" ":"%></div>
+    <div class="tweet"><%= "#{tweet.text}"  %></div>
+		<%#= image_tag "heart.png", class:"mai",width:"30",height:"30" %>
+
+
+  
+<%#if @tweet.like(current_user)%>
+    <%#= link_to tweet_like_path(@tweet), method: :delete do %>
+        <%#span style="color:red;">❤︎</span>
+    <%#end%>
+<%#else%>
+    <%#= link_to tweet_likes_path(@tweet), method: :post do %>
+        <%#span>❤︎</span>
+    <%#end%>
+<%#end%>
+<td id="like-<%= tweet.id %>">
+ <%= render partial: "like", locals: { tweet: tweet } %>
+</td>
+
+
+
+
+		<%= link_to("コメントする", "#", class: "btna") %>	
+		<% if current_user.id == tweet.user_id %>
+		<%= link_to("削除する", tweet_path(tweet.id), method: :delete, class: "btna") %>
+		<% end %>
+		</div>
+
+ </div>
+<% end %>

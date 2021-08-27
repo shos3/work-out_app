@@ -3,14 +3,21 @@
 
 
 <div class="naiyou">トレーニング内容</div>
-  <%= "#{@plan.start_time}"  %> <br>
-  <%= "#{@plan.event}"  %> <br>
-  <%= "#{@plan.kg}" "kg" %>
-  <%= "#{@plan.number}" "回" %>
-  <%= "#{@plan.set}" "セット" %>
-  <%= "#{@plan.time}" "分" %>
- <div class="memo">メモ</div> 
- <%= "#{@plan.memo}" %> 
+  <div class="record"><%= "#{@plan.start_time}" %></div> 
+  <br>
+    <div class="record">
+    <%= "#{@plan.event}"  %></div>
+    <br>
+      <div class="record">
+      <%= "#{@plan.kg}" "kg" %></div>
+          <div class="record"> 
+          <%= "#{@plan.number}" "回" %></div>
+              <div class="record">  
+              <%= "#{@plan.set}" "セット" %></div>
+                  <div class="record">
+                  <%= "#{@plan.time}" "分" %></div>
+                      <div class="memo">メモ</div> 
+                       <%= "#{@plan.memo}" %> 
 
 
 <p><%#= link_to '編集する', edit_plan_path(:id) %></p>
