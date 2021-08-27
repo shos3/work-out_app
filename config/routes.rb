@@ -11,6 +11,3 @@ Rails.application.routes.draw do
   delete '/tweets/:tweet_id/like' => 'like#destroy'
   resources :messages, only: [:new, :create]
 end
-
-# post '/tweets/:tweet_id/like' => "like#create"
-#   delete '/tweets/:tweet_id/like' => "like#destroy"

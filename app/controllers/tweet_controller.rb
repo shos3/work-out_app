@@ -15,20 +15,19 @@ class TweetController < ApplicationController
   end
 
   def create
-    # binding.pry
     @tweet = Tweet.new(tweet_params)
     if @tweet.save
       redirect_to tweet_index_path
     else
       render 'new'
     end
-
+  end
     #@message = Message.new(text: params[:message][:text])
     # binding.pry
     # if @message.save
     # ActionCable.server.broadcast 'message_channel', content: @message
     # end
-  end
+
 
   # def show
   # end
