@@ -8,6 +8,8 @@ class Tweet < ApplicationRecord
   def like?(user)
     likes.where(user_id: user.id).exists?
 end
+
+has_many :messages, dependent: :destroys
 end
 
 #ApplicationRecord

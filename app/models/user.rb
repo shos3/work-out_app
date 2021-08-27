@@ -6,6 +6,9 @@ class User < ApplicationRecord
           has_many :plans
           has_many :tweets, dependent: :destroy
           has_many :likes, dependent: :destroy
+          has_many :messages, dependent: :destroy
+
+
 
           validates :nickname,presence: true
           validates :age,presence: true

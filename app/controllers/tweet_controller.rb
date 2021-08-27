@@ -6,6 +6,9 @@ class TweetController < ApplicationController
     query = "SELECT * FROM tweets"
     @tweets = Tweet.find_by_sql(query)
     @tweets = Tweet.all.order(created_at: :desc)
+
+    @messages = Message.all
+    @message = Message.new
   end
   
 
@@ -24,6 +27,12 @@ class TweetController < ApplicationController
     else
       render 'new'
     end
+
+    @message = Message.new(text: params[:message][:text])
+    #binding.pry
+    #if @message.save
+    # ActionCable.server.broadcast 'message_channel', content: @message
+    #end   
   end
 
 

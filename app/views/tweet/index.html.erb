@@ -36,7 +36,30 @@
 
 
 
-		<%= link_to("コメントする", "#", class: "btna") %>	
+
+
+ <%#= render partial: "messages/new", locals: { message: @messages } %>
+<%#= form_with model: @message do |f| %>
+  <%#= f.text_field :text %>
+  <%#= f.submit '送信' %>
+<%# end %>
+<%#<div id='messages'>
+  <% @messages.reverse_each do |m| %>
+    <p><%#= m.text %></p>
+  <%# end %>
+<%#</div>
+
+
+
+
+
+
+
+
+
+
+
+		<%#= link_to("コメントする", "#", class: "btna") %>	
 		<% if current_user.id == tweet.user_id %>
 		<%= link_to("削除する", tweet_path(tweet.id), method: :delete, class: "btna") %>
 		<% end %>

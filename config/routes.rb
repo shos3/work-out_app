@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users, controllers: {
-   registrations: 'users/registrations',
+    registrations: 'users/registrations',
     sessions: 'users/sessions',
   }
   root 'application#index'
@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :tweet, only: [:index, :new, :create, :show, :destroy] 
     post '/tweets/:tweet_id/like' => "like#create"
     delete '/tweets/:tweet_id/like' => "like#destroy"
+    resources :messages, only: [:new, :create]
 end
 
 #post '/tweets/:tweet_id/like' => "like#create"
