@@ -14,8 +14,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.precompile += [lambda do |filename, path|
   path.start_with?(Rails.root.join('app', 'assets').to_s) &&
-      %w(.js .css).include?(File.extname(filename)) &&
-      !File.basename(filename).start_with?('_')
+    %w[.js .css].include?(File.extname(filename)) &&
+    !File.basename(filename).start_with?('_')
 end]
 
-#全てのCSSファイルやJSファイルをプリコンパイルの対象にする
+# 全てのCSSファイルやJSファイルをプリコンパイルの対象にする

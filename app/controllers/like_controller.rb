@@ -1,6 +1,5 @@
 class LikeController < ApplicationController
-
-before_action :set_tweet
+  before_action :set_tweet
 
   def create
     @like = Like.create(user_id: current_user.id, tweet_id: @tweet.id)
@@ -14,21 +13,13 @@ before_action :set_tweet
   end
 
   private
-  def set_tweet
-    @tweet =Tweet.find(params[:tweet_id])
-  end
 
+  def set_tweet
+    @tweet = Tweet.find(params[:tweet_id])
+  end
 end
 
-
-
-
-
-
-
-
-
-  # before_action :set_post
+# before_action :set_post
 
 #  def create
 #    Like.create(user_id: current_user.id, post_id: params[:id])
