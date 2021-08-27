@@ -35,3 +35,15 @@
 | user               |  references  | null: false, foreign_key: true |
 
 - belongs_to :user
+
+
+
+## likes テーブル
+
+| Column              | Type    | Options                        |
+| ------------------  | ------  | -----------                    |
+| user                | integer | null: false, foreign_key: true |
+| tweet               | integer | null: false, foreign_key: true |
+
+
+

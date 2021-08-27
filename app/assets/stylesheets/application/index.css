@@ -187,34 +187,34 @@ li{
 
 
 .day.wday-6.past.current-month{
-  background-color: rgb(118, 230, 245);
+  background-color: rgb(156, 239, 250);
 }
 
 .day.wday-6.past.prev-month{
-  background-color: rgb(118, 230, 245);
+  background-color: rgb(156, 239, 250);
 }
 
 .day.wday-6.future.current-month{
-  background-color: rgb(118, 230, 245); 
+  background-color:rgb(156, 239, 250); 
 }
 
 .day.wday-6.future.next-month{
-  background-color:rgb(118, 230, 245);  
+  background-color:rgb(156, 239, 250);  
 }
 
 .day.wday-0.past.current-month{
-background-color: rgb(243, 178, 158);
+background-color: rgb(252, 198, 191);
 }
 
 .day.wday-0.past.current-month{
-  background-color: rgb(243, 178, 158);
+  background-color: rgb(252, 198, 191);
 }
 
 .day.wday-0.future.current-month{
-  background-color: rgb(243, 178, 158);
+  background-color: rgb(252, 198, 191);
 }
 
 .day.wday-0.future.next-month{
-  background-color: rgb(243, 178, 158);
+  background-color:rgb(252, 198, 191);
 }
 
