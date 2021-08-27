@@ -25,7 +25,7 @@ class MessagesController < ApplicationController
 #    params.require(:comment).permit(:comment)
 #  end
 
-  d def create
+   def create
     @tweet = Tweet.find(params[:tweet_id])
     @message = @tweet.messages.new(message_params)
     @message.user_id = current_user.id
