@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
   #    @comments = @post.comments
   #    redirect_to new_post_path
   #  end
- # end
+# end
 
 #  def destroy
 #    @post = Post.find(params[:post_id])
