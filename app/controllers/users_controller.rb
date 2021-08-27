@@ -6,3 +6,4 @@ class UsersController < ApplicationController
     @plans = current_user.plans
   end
 end
+
