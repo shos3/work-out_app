@@ -16,8 +16,7 @@
     <div class="form-tag">時間</div>
     <%= f.datetime_select :start_time %>
 
-    <p> <%#= f.date_field :date, class: 'date-select' %></p>
- <p><%= f.label :トレーニング内容を入力↓, class: 'event' %></p>
+<p><%= f.label :トレーニング内容を入力↓, class: 'event' %></p>
           <select name="plan[event]">
               <optgroup label="胸">
                 <option value="ベンチプレス">ベンチプレス</option>
@@ -96,10 +95,10 @@
       
           <%= f.number_field :number,{min: 0, max: 50}%>
           <%= f.label :回 %>
-   
+
             <%= f.number_field :set,{min: 0, max: 10}%>
             <%= f.label :set %>
-      
+
               <%= f.number_field :time,{min: 0, max: 300}%>
               <%= f.label :分 %>
           
@@ -107,7 +106,7 @@
             <p>メモ欄：<br>
 <%= f.text_area :memo, size: "80x4" %>
 </p>
-     <input data-repeater-delete type="button" value="削除"/>       
+    <input data-repeater-delete type="button" value="削除"/>       
     <p><input data-repeater-create type="button" value="入力フォームを追加"/></p>
 
   <p><%= f.submit 'トレーニングを保存する', class:"btn" %></p>
