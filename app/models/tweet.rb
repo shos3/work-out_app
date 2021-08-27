@@ -12,3 +12,4 @@ end
 
 # ApplicationRecord
 # ActiveRecord::Base
+
