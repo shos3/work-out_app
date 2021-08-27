@@ -23,7 +23,7 @@ class TweetController < ApplicationController
       render 'new'
     end
 
-    @message = Message.new(text: params[:message][:text])
+    #@message = Message.new(text: params[:message][:text])
     # binding.pry
     # if @message.save
     # ActionCable.server.broadcast 'message_channel', content: @message
