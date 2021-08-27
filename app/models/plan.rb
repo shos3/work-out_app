@@ -5,6 +5,7 @@ class Plan < ApplicationRecord
   validates :number, presence: true
   validates :set, presence: true
   validates :time, presence: true
+  validate :memo
   validates :start_time, presence: true
 
   belongs_to :user
