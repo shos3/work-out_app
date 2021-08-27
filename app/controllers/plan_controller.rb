@@ -49,7 +49,7 @@ class PlanController < ApplicationController
   private
 
   def plan_params
-    params.require(:plan).permit(:date, :event, :kg, :number, :set, :time, :start_time,
+    params.require(:plan).permit(:event, :kg, :number, :set, :time, :start_time,
                                  :memo).merge(user_id: current_user.id)
   end
 end
