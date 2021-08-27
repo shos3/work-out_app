@@ -17,9 +17,8 @@
                   <div class="record">
                   <%= "#{@plan.time}" "分" %></div>
                       <div class="memo">メモ</div> 
-                       <%= "#{@plan.memo}" %> 
+                      <%= "#{@plan.memo}" %> 
 
 
-<p><%#= link_to '編集する', edit_plan_path(:id) %></p>
 <p><%= link_to '削除する', plan_path, method: :delete %></p>
 <%= link_to '戻る', plan_index_path %>

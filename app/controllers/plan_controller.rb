@@ -13,10 +13,8 @@ class PlanController < ApplicationController
     @plan = Plan.new
   end
 
-  def show
-    @plan = Plan.find(params[:id])
-  end
 
+  
   def create
     # binding.pry
     @plan = Plan.new(plan_params)
@@ -26,6 +24,12 @@ class PlanController < ApplicationController
       render :new
     end
   end
+
+
+  def show
+    @plan = Plan.find(params[:id])
+  end
+
 
   def destroy
     @plan = Plan.find(params[:id])
