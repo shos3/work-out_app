@@ -1,25 +1,21 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  def after_sign_up_path_for(resource)
+  def after_sign_up_path_for(_resource)
     plan_index_path
   end
 
-
-
-
-  #def after_sign_up_path_for(resource)
+  # def after_sign_up_path_for(resource)
   #  application_plan_index_path
   # end
-
 
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
-  #GET /resource/sign_up
+  # GET /resource/sign_up
   # def new
   # application_plan_index_path
-  #end
+  # end
 
   # POST /resource
   # def create
