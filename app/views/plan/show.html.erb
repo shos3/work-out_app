@@ -2,7 +2,14 @@
 
 
 
-<div class="naiyou">トレーニング内容</div>
+<nav>
+<ul>
+<div class="words">トレーニング内容</div>
+<li><%= link_to '削除する', plan_path, method: :delete %></li>
+<li><%= link_to '戻る', plan_index_path %></li>
+</ul>
+</nav>
+
   <div class="record"><%= "#{@plan.start_time}" %></div> 
   <br>
     <div class="record">
@@ -16,9 +23,5 @@
               <%= "#{@plan.set}" "セット" %></div>
                   <div class="record">
                   <%= "#{@plan.time}" "分" %></div>
-                      <div class="memo">メモ</div> 
-                      <%= "#{@plan.memo}" %> 
-
-
-<p><%= link_to '削除する', plan_path, method: :delete %></p>
-<%= link_to '戻る', plan_index_path %>
+                      <div class="nott">
+                      <%= "#{@plan.memo}" %> </div>

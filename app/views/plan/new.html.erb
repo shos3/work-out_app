@@ -1,22 +1,25 @@
 <p id="notice"><%= notice %></p>
-<p><strong>~~記録と内容~~</strong></p>
+<nav>
+<ul>
+<div class="words">記録と内容</div>
+<li><%= link_to '戻る', plan_index_path %></li>
+</ul>
+</nav>
 
 
-<div class="btn"><%= link_to '戻る', plan_index_path %></div>
 
 
-
-
-
+<div class="all">
   <%= form_with model:@plan, url: plan_index_path, method: :post, local: true do |f| %>
     <%= f.label :日付、時間を選択してください, class: 'date' %>
 
 
 <div class="time">
-    <div class="form-tag">時間</div>
     <%= f.datetime_select :start_time %>
-
-<p><%= f.label :トレーニング内容を入力↓, class: 'event' %></p>
+<div class="muscle">
+    <%= f.label :トレーニング内容, class: 'event' %>
+    </div>
+    <div class="eventall">
           <select name="plan[event]">
               <optgroup label="胸">
                 <option value="ベンチプレス">ベンチプレス</option>
@@ -89,28 +92,27 @@
                 <optgroup label="ランニング">
                 <option value="ランニング">ランニング</option>
               </optgroup>
-            </select>    
+            </select>
+ <div class="allall">               
       <%= f.number_field :kg,{min: 0, max: 200}%>
       <%= f.label :kg %>
-      
           <%= f.number_field :number,{min: 0, max: 50}%>
           <%= f.label :回 %>
-
             <%= f.number_field :set,{min: 0, max: 10}%>
             <%= f.label :set %>
-
               <%= f.number_field :time,{min: 0, max: 300}%>
               <%= f.label :分 %>
-          
-
-            <p>メモ欄：<br>
+ </div>         
+</div>
+            <div class="memo">メモ欄</div>
 <%= f.text_area :memo, size: "80x4" %>
 </p>
-    <input data-repeater-delete type="button" value="削除"/>       
-    <p><input data-repeater-create type="button" value="入力フォームを追加"/></p>
+   <!-- <input data-repeater-delete type="button" value="削除"/>       
+    <p><input data-repeater-create type="button" value="入力フォームを追加"/></p>-->
 
-  <p><%= f.submit 'トレーニングを保存する', class:"btn" %></p>
+  <p><%= f.submit 'トレーニングを保存する', class:"savebtn" %></p>
   <% end %>
+ </div> 
   <%#</form>%>
 
 

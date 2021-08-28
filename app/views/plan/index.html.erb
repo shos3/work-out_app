@@ -14,24 +14,22 @@
     <link rel="stylesheet" href=plans/index.scss>
   </head>
 
-<%= current_user.nickname %>さんがログイン中<br>
-<div class="nickname">
+<nav>
+<ul>
+<div class="words">
 <%= "こんにちは" "#{current_user.nickname}" "さん" %>
 </div>
-<h3>〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜</h3>
-<li><%= link_to 'ログアウト', destroy_user_session_path, class: "sign-out" %></li>
-<br>
-<li><%= link_to 'トレーニング記録へ',  new_plan_path,method: :get, class: "btn" %></li>
-<br>
-<%= link_to 'トレーニング共有一覧へ',   tweet_index_path, class: "btn" %></li>
 
+<li><%= link_to 'ログアウト', destroy_user_session_path, class: "setbtn" %></li>
+<li><%= link_to 'トレーニング記録へ',  new_plan_path,method: :get, class: "setbtn" %></li>
+<li><%= link_to 'トレーニング共有一覧へ',   tweet_index_path, class: "setbtn" %></li>
+</ul>
+</nav>
 
-
-<p id="notice"><%= notice %></p>
 <div class= "carender">
 <h4>カレンダー</h4>
 </div>
-※カレンダーの日付更新はAM:09:00に本日の日付になります。
+<div class="note">※日付欄はAM:09:00に更新され色が付きます。</div>
 <%#div class="tatal"><%= current_user.nickname %><%#さんの今までの総種目トレーニング数は↓</div>
 <%#= current_user.plans.where('created_at > ?', Date.today).count %>
 <%#= current_user.plan %>
@@ -57,3 +55,8 @@
   <% end %>
 <% end %>
 <% end %>
+ <footer id="footer">
+        <div class="logo">
+        </div>
+        <p>&copy; shos3 work out</p>
+      </footer>

@@ -1,10 +1,12 @@
-<div class="contents row">
-  <div class="container">
-        <h1>投稿ページ</h1>
+<div class="container">
+  <nav>
+  <ul>
+        <div class="words">投稿ページ</div>
+        <li><%= link_to "戻る", tweet_index_path %></li>
+  </ul>
+  </nav> 
         <%= form_with model: @tweet, url: tweet_index_path, method: :post do |t| %>
           <%= t.text_area :text, id: "text" %>
-          <%= t.submit "SEND" %>
-        <%= link_to("戻る", tweet_index_path, class: "btn") %>
-      </div>
+          <%= t.submit "SEND", class:"savebtn" %>
       </div>
 <% end %>

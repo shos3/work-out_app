@@ -1,61 +1,43 @@
-<h2>新規登録</h2>
-
+<!--<h2>新規登録</h2>-->
+<div class="form-wrapper">
+  <h1>Sign Up</h1>
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
 
-
-   <div class="field">
-        <%= f.label :ニックネーム %> <em>（最大6文字）</em><br />
+   <div class="form-item">
+        <%= f.label :ニックネーム %> <em>（最大6文字）</em>
         <%= f.text_field :nickname, autofocus: true, maxlength: "6" %>
       </div>
 
-  <div class="field">
-    <%= f.label :年齢 %><br />
+  <div class="form-itemr">
+    <%= f.label :年齢 %>
     <%= f.number_field :age,{min: 0, max: 99}%>
   </div>
 
 
-
-
-<%#label for="tentacles">Number of tentacles (10-100):</label>
-
-<input type="number" id="tentacles" name="tentacles"
-       min="10" max="100">%>
-
-
-
-
-
-
-  <div class="field">
-    <%= f.label :メールアドレス %><br />
+  <div class="form-item">
+    <%= f.label :メールアドレス %>
     <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
   </div>
 
-  <div class="field">
+  <div class="form-item">
     <%= f.label :バスワード %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <% end %>
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
-  <div class="field">
+  <div class="form-item">
     <%= f.label :確認パスワード %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
 
 
-  <!--<div class="field">
-    <%= f.label :年齢 %><br />
-    <%= f.range_field :age, autofocus: true, autocomplete: "age" %>
-  </div>-->
-
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="button-panel">
+    <%= f.submit "Sign up" ,class: "button" %>
   </div>
 <% end %>
 
