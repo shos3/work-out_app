@@ -47,8 +47,8 @@ class MessagesController < ApplicationController
 
   private
 
-  def comment_params
-    params.require(:comment).permit(:comment)
+  def message_params
+    params.require(:message).permit(:text)
   end
 
 end
