@@ -13,7 +13,7 @@
     <title>Work-out</title>
     <link rel="stylesheet" href=plans/index.scss>
   </head>
-  
+
 <%= current_user.nickname %>さんがログイン中<br>
 <div class="nickname">
 <%= "こんにちは" "#{current_user.nickname}" "さん" %>
@@ -43,13 +43,6 @@
 
   <tbody>
     <% @plans.each do |plan| %>
-      <tr>
-        <td><%#= plan.event %></td>
-        <td><%#= plan&.start_time&.strftime("%Y-%m-%d %H:%M") %></td>
-        <td><%#= link_to 'Show', blog %></td>
-        <td><%#= link_to 'Edit', edit_blog_path(blog.id) %></td>
-        <td><%#= link_to 'Destroy',blog_path(blog.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
     <% end %>
   </tbody>
 <br>
@@ -57,7 +50,7 @@
   <%= date.day %>
   <% plans.each do |plan| %>
     <div>
-    <% if  current_user.id == plan.user.id%>
+    <% if  current_user.id == plan.user.id %>
       <%= link_to "⚫︎" "#{plan.event}", plan %>
       
     </div>
