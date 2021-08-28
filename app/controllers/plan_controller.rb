@@ -14,7 +14,7 @@ class PlanController < ApplicationController
   end
 
 
-  
+
   def create
     # binding.pry
     @plan = Plan.new(plan_params)
