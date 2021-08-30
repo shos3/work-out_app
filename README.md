@@ -10,6 +10,7 @@
 
 - has_many :plans
 - has_many :tweets
+- has_many :likes
 
 ## plans テーブル
 
@@ -35,7 +36,7 @@
 | user               |  references  | null: false, foreign_key: true |
 
 - belongs_to :user
-
+- has_many :likes
 
 
 ## likes テーブル
@@ -45,5 +46,5 @@
 | user                | integer | null: false, foreign_key: true |
 | tweet               | integer | null: false, foreign_key: true |
 
-
-
+- belongs_to :user
+- belongs_to :tweet
