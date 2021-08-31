@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+
   def after_inactive_sign_up_path_for(_resource)
     application_plan_index_path(application_id)
   end
@@ -22,6 +24,11 @@ class ApplicationController < ActionController::Base
 
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[nickname age gender])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[nickname age gender avatar])
   end
+
+  #def configure_permitted_parameters
+   # devise_parameter_sanitizer.permit(:account_update, keys: %i(avatar))
+ # end
+
 end

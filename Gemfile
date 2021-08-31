@@ -62,3 +62,6 @@ gem 'simple_calendar', '~> 2.0'
 group :development do
   gem 'rubocop', require: false
 end
+
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
