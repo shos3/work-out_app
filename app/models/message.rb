@@ -1,6 +1,7 @@
 class Message < ApplicationRecord
   
-  #validates :text, presence: true
-  #belongs_to :tweet
-  #belongs_to :user
+  validates :content, presence: true
+
+  belongs_to :tweet
+  belongs_to :user
 end

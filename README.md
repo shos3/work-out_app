@@ -1,16 +1,18 @@
 ## users テーブル
 
-| Column             | Type   | Options                   |
-| ------------------ | ------ | -----------               |
-| nickname           | string | null: false, unique: true |
-| email              | string | null: false, unique: true |
-| encrypted_password | string | null: false               |
-| age                | string | null: false               |
-
+| Column             | Type    | Options                   |
+| ------------------ | ------  | -----------               |
+| nickname           | string  | null: false, unique: true |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
+| age                | string  | null: false               |
+| gender             | integer | null: false               |
 
 - has_many :plans
 - has_many :tweets
 - has_many :likes
+- has_many :messages
+
 
 ## plans テーブル
 
@@ -37,12 +39,25 @@
 
 - belongs_to :user
 - has_many :likes
-
+- has_many :messages
 
 ## likes テーブル
 
 | Column              | Type    | Options                        |
 | ------------------  | ------  | -----------                    |
+| user                | integer | null: false, foreign_key: true |
+| tweet               | integer | null: false, foreign_key: true |
+
+- belongs_to :user
+- belongs_to :tweet
+
+
+
+## messages テーブル
+
+| Column              | Type    | Options                        |
+| ------------------  | ------  | -----------                    |
+| content             | text    | null: false                    |
 | user                | integer | null: false, foreign_key: true |
 | tweet               | integer | null: false, foreign_key: true |
 

@@ -34,7 +34,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-
+<th>性別</th>
+<%= f.radio_button :gender, :男 %>
+<%= f.label :男 %>
+<%= f.radio_button :gender, :女 %>
+<%= f.label :女 %> 
 
   <div class="button-panel">
     <%= f.submit "Sign up" ,class: "button" %>
