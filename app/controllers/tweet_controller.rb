@@ -32,8 +32,8 @@ class TweetController < ApplicationController
     # end
 
 
-    #def show
-    #end
+    def show
+    end
 
   def destroy
     @tweet = Tweet.find(params[:id])

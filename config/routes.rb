@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :tweet, only: [:index, :new, :create, :show, :destroy]do
     resources :message, only: [:create, :destroy]
 end
-
+ 
   post '/tweets/:tweet_id/like' => 'like#create'
   delete '/tweets/:tweet_id/like' => 'like#destroy'
 
