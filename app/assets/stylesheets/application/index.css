@@ -97,6 +97,9 @@ a {
 
 
 /* メインページ */
+.gram{
+  border-radius: 50px;
+}
 .words{
   display: flex;
   font-size: 30px;

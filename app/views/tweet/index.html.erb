@@ -13,6 +13,7 @@
 <% @tweets.each do |tweet| %>
  <div>
     <div class="boxa">
+    <%#= image_tag @user.avatar, :size =>'50x50' %>
 		<div class="name"><%= "#{tweet.user.nickname}" ":"%></div>
     <div class="tweet"><%= "#{tweet.text}"  %>               <%=  tweet.created_at.strftime('%d日 %H:%M')%>	<% if current_user.id == tweet.user_id %>
 		<%= link_to("削除する", tweet_path(tweet.id), method: :delete, class: "btna") %>

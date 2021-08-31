@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :messages, dependent: :destroy
 
-
+  has_one_attached :avatar
 
   validates :nickname, presence: true
   validates :age, presence: true
