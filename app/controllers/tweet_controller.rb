@@ -5,10 +5,8 @@ class TweetController < ApplicationController
     query = 'SELECT * FROM tweets'
     @tweets = Tweet.find_by_sql(query)
     @tweets = Tweet.all.order(created_at: :desc)
-   
-
-
-    
+  
+    @user = User.find(current_user.id)
    
   end
 

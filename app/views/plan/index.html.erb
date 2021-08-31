@@ -24,7 +24,7 @@
     <% else %>      
     <%= image_tag src='5183ef65b82a66cf573f324e59cf028b.png', class: "user-icon", alt: "ユーザーアイコン", :size =>'50x50', class: "gram"%>
     <% end %>   
-<%= "こんにちは" "#{current_user.nickname}" "さん" %>
+<%=link_to "こんにちは" "#{current_user.nickname}" "さん" ,edit_user_registration_path %>
 </div>
 
 <li><%= link_to 'ログアウト', destroy_user_session_path, class: "setbtn" %></li>

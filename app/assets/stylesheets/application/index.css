@@ -95,6 +95,40 @@ a {
 }
 /* トップページここまで*/
 
+/* ユーザー編集画面*/
+.update{
+ text-align: center;
+ font-size: 40px;
+ color: rgb(68, 109, 150);
+ border-bottom: solid 3px black;
+}
+
+.upall{
+  background: #fafafa;
+  border: none;
+  /*border-bottom: 2px solid #e9e9e9;*/
+  color: #666;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  height: 50px;
+  width: 100%; 
+  text-align: center;
+}
+
+.upback{
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #FFF;
+  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  transition: .4s;
+}
+
+.upback:hover {
+  background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+}
+/* ユーザー編集画面*/
 
 /* メインページ */
 .gram{

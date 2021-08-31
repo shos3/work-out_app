@@ -13,6 +13,12 @@
 <% @tweets.each do |tweet| %>
  <div>
     <div class="boxa">
+    
+    <% if tweet.user.avatar.attached? %>
+    <%= image_tag tweet.user.avatar, :size =>'50x50', class: "gram" %>
+    <% else %>      
+    <%= image_tag src='5183ef65b82a66cf573f324e59cf028b.png', class: "user-icon", alt: "ユーザーアイコン", :size =>'50x50', class: "gram"%>
+    <% end %>   
     <%#= image_tag @user.avatar, :size =>'50x50' %>
 		<div class="name"><%= "#{tweet.user.nickname}" ":"%></div>
     <div class="tweet"><%= "#{tweet.text}"  %>               <%=  tweet.created_at.strftime('%d日 %H:%M')%>	<% if current_user.id == tweet.user_id %>
