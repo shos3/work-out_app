@@ -33,16 +33,20 @@
     <%= f.label :確認パスワード %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-
+<div class="example">
 <th>性別</th>
+<div>
+<div class="example">
 <%= f.radio_button :gender, :男 %>
 <%= f.label :男 %>
 <%= f.radio_button :gender, :女 %>
 <%= f.label :女 %> 
-
-
+</div>
+<th>プロフィール画像</th>
 <%= f.file_field :avatar %>
-
+<div class="example">
+<th>*プロフィール画像は必須ではありません</th>
+</div>
   <div class="button-panel">
     <%= f.submit "Sign up" ,class: "button" %>
   </div>

@@ -20,10 +20,10 @@
 
 
     <% if @user.avatar.attached? %>
-   <%= image_tag @user.avatar, :size =>'50x50', class: "gram" %>
-  <% else %>      
-  <%= image_tag src='5183ef65b82a66cf573f324e59cf028b.png', class: "user-icon", alt: "ユーザーアイコン", :size =>'50x50', class: "gram"%>
-  <% end %>   
+    <%= image_tag @user.avatar, :size =>'50x50', class: "gram" %>
+    <% else %>      
+    <%= image_tag src='5183ef65b82a66cf573f324e59cf028b.png', class: "user-icon", alt: "ユーザーアイコン", :size =>'50x50', class: "gram"%>
+    <% end %>   
 <%= "こんにちは" "#{current_user.nickname}" "さん" %>
 </div>
 
