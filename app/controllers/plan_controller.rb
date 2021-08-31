@@ -6,6 +6,7 @@ class PlanController < ApplicationController
     @user = User.find(current_user.id)
     @plans = Plan.all
     plan = Plan.new
+    
     # @plan.user_id = current_user.id
   end
 

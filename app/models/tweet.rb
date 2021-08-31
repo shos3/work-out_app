@@ -7,7 +7,7 @@ class Tweet < ApplicationRecord
     likes.where(user_id: user.id).exists?
   end
 
-  #has_many :messages, dependent: :destroys
+  has_many :messages, dependent: :destroy
 end
 
 # ApplicationRecord

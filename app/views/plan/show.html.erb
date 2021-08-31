@@ -10,7 +10,7 @@
 </ul>
 </nav>
 
-  <div class="record"><%= "#{@plan.start_time}" %></div> 
+  <div class="record"><%= "#{@plan.start_time.to_s(:datetime_jp)}" %></div> 
   <br>
     <div class="record">
     <%= "#{@plan.event}"  %></div>

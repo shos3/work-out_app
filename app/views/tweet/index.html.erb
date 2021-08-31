@@ -14,26 +14,16 @@
  <div>
     <div class="boxa">
 		<div class="name"><%= "#{tweet.user.nickname}" ":"%></div>
-    <div class="tweet"><%= "#{tweet.text}"  %></div>
+    <div class="tweet"><%= "#{tweet.text}"  %>               <%=  tweet.created_at.strftime('%d日 %H:%M')%>	<% if current_user.id == tweet.user_id %>
+		<%= link_to("削除する", tweet_path(tweet.id), method: :delete, class: "btna") %>
+		<% end %></div>
 		<%#= image_tag "heart.png", class:"mai",width:"30",height:"30" %>
-
+    
 
   
-<%#if @tweet.like(current_user)%>
-    <%#= link_to tweet_like_path(@tweet), method: :delete do %>
-        <%#span style="color:red;">❤︎</span>
-    <%#end%>
-<%#else%>
-    <%#= link_to tweet_likes_path(@tweet), method: :post do %>
-        <%#span>❤︎</span>
-    <%#end%>
-<%#end%>
 <td id="like-<%= tweet.id %>">
  <%= render partial: "like", locals: { tweet: tweet } %>
 </td>
-
-
-
 
 
 
@@ -44,11 +34,9 @@
 <%# end %>
 <%#<div id='messages'>
   <% @messages.reverse_each do |m| %>
-    <p><%#= m.text %></p>
+  <%#= m.text %>
   <%# end %>
-<%#</div>
-
-
+<%#</div>%>
 
 
 
@@ -59,9 +47,6 @@
 
 
 		<%#= link_to("コメントする", "#", class: "btna") %>	
-		<% if current_user.id == tweet.user_id %>
-		<%= link_to("削除する", tweet_path(tweet.id), method: :delete, class: "btna") %>
-		<% end %>
 		</div>
 
  </div>

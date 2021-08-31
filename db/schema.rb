@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2021_08_27_015657) do
   end
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content", null: false
     t.bigint "user_id", null: false
     t.bigint "tweet_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -57,6 +58,7 @@ ActiveRecord::Schema.define(version: 2021_08_27_015657) do
     t.string "encrypted_password", default: "", null: false
     t.string "nickname", null: false
     t.string "age", null: false
+    t.string "gender", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
