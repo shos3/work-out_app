@@ -20,8 +20,8 @@
     <%= image_tag src='5183ef65b82a66cf573f324e59cf028b.png', class: "user-icon", alt: "ユーザーアイコン", :size =>'50x50', class: "gram"%>
     <% end %>   
     <%#= image_tag @user.avatar, :size =>'50x50' %>
-		<div class="name"><%= link_to ("#{tweet.user.nickname}" ":") ,tweet_path(:id) %></div>
-    <div class="tweet"><%= "#{tweet.text}"  %>               <%=  tweet.created_at.strftime('%d日 %H:%M')%>	<% if current_user.id == tweet.user_id %>
+		<div class="name"><%= link_to ("#{tweet.user.nickname}" ":") ,tweet_path(tweet.id) %></div>
+    <div class="tweet"><%=  "#{tweet.text}"  %>                     <%= "(" "#{tweet.created_at.strftime('%d日 %H:%M')}" ")" %>	<% if current_user.id == tweet.user_id %>
 		<%= link_to("削除する", tweet_path(tweet.id), method: :delete, class: "btna") %>
 		<% end %></div>
 		<%#= image_tag "heart.png", class:"mai",width:"30",height:"30" %>
@@ -46,8 +46,15 @@
 <%#</div>%>
 
 
-
-
+<%= form_with model: @message do |f| %>
+  <%= f.text_field :text %>
+  <%= f.submit '送信' %>
+<% end %>
+<div id='messages'>
+  <% @messages.reverse_each do |message| %>
+    <p><%= message.text %></p>
+  <% end %>
+</div>
 
 
 

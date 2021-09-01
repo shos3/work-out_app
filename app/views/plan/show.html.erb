@@ -12,16 +12,17 @@
 
   <div class="record"><%= "#{@plan.start_time.to_s(:datetime_jp)}" %></div> 
   <br>
+  <div class="what">
     <div class="record">
-    <%= "#{@plan.event}"  %></div>
+    <%= "#{@plan.event}"  %></div></div>
     <br>
-      <div class="record">
-      <%= "#{@plan.kg}" "kg" %></div>
-          <div class="record"> 
-          <%= "#{@plan.number}" "回" %></div>
-              <div class="record">  
-              <%= "#{@plan.set}" "セット" %></div>
-                  <div class="record">
-                  <%= "#{@plan.time}" "分" %></div>
-                      <div class="nott">
+      <div class="record">重量：
+      <%= "#{@plan.kg}" "kg" %></div><br>
+          <div class="record">回数：
+          <%= "#{@plan.number}" "回" %></div><br>
+              <div class="record">セット数：
+              <%= "#{@plan.set}" "セット" %></div><br>
+                  <div class="record">時間：
+                  <%= "#{@plan.time}" "分" %></div><br>
+                      <div class="nott">メモ欄：
                       <%= "#{@plan.memo}" %> </div>

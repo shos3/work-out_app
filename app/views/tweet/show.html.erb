@@ -1,3 +1,38 @@
-aaaaa
+<nav>
+<ul>
+<li><%= link_to "戻る", tweet_index_path %></li>
+</ul>
+</nav>
 
-<li><%= link_to '戻る', tweet_index_path %></li>
+
+<div class="friend">
+
+<% if @tweet.user.avatar.attached? %>
+    <%= image_tag @tweet.user.avatar, class: "gaga" %>
+    <% else %>      
+    <%= image_tag src='5183ef65b82a66cf573f324e59cf028b.png', class: "user-icon", alt: "ユーザーアイコン", class: "gaga"%>
+    <% end %>   
+
+      <div class="myjoho">
+        <div class="mypage"><%= "#{@tweet.user.nickname}" "さんの情報"  %></div>
+        </div><br>
+
+
+      <div class="myage">
+        <div class="mypage"><%= "年齢:" "#{@tweet.user.age}" "歳" %></div>
+        </div><br>
+
+      <div class="mygender">
+        <div class="mypage"><%= "性別:" "#{@tweet.user.gender}"  %></div>
+        </div><br>
+
+<div class="tweetall">
+投稿一覧
+</div>
+<div class="alls">
+<ul class="cp_list">
+ <% @user.tweets.each do |post| %>
+   <li><h4><strong><%=  post.text %></strong></h4></li>
+<% end %>
+</ul>
+</div>
