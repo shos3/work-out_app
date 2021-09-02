@@ -97,10 +97,11 @@ a {
 
 /* ユーザー編集画面*/
 .update{
- text-align: center;
- font-size: 40px;
- color: rgb(68, 109, 150);
- border-bottom: solid 3px black;
+  display: flex;
+  text-align: center;
+  font-size: 40px;
+  color: rgb(68, 109, 150);
+  border-bottom: solid 3px black;
 }
 
 .upall{
@@ -113,6 +114,7 @@ a {
   height: 50px;
   width: 100%; 
   text-align: center;
+  
 }
 
 .upback{
@@ -128,6 +130,17 @@ a {
 .upback:hover {
   background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
 }
+
+.holl{
+
+}
+
+
+#lister{
+  margin: 0 auto;
+  width :70px;
+  height:70px;
+}
 /* ユーザー編集画面ここまで*/
 
 /* メインページ */
@@ -141,7 +154,18 @@ a {
   text-decoration: underline;
 }
 
+.tatal{
+  font-size: 30px;
+}
 
+.calendar-title{
+font-size: 20px;
+}
+.counter{
+  font-size: 27px;
+  text-decoration :underline;
+  color: #6e7e16;
+}
 
 nav{
   border-bottom: 1px solid #ccc;
@@ -183,9 +207,12 @@ nav{
 
 
   .carender{
-    color:rgb(135, 106, 240);
+    text-align: center;
+    color:rgb(78, 91, 148);
     font-size :50px;
     }
+
+
   .note{
     color: #666;
   }
@@ -253,7 +280,7 @@ nav{
     .wday-6 {}
   
     .today {
-      background: #52df45
+      background: #c0cfbf
     }
   
     .past {}

@@ -6,27 +6,28 @@ class TweetController < ApplicationController
     @tweets = Tweet.find_by_sql(query)
     @tweets = Tweet.all.order(created_at: :desc)
   
-    
     @messages = Message.all
     @message = Message.new
+    
   end
 
 
   def new
    @tweet = Tweet.new
 
-   @messages = Message.all
-    @message = Message.new 
+
   end
 
 
   def create
     @tweet = Tweet.new(tweet_params)
+    #binding.pry
     if @tweet.save
       redirect_to tweet_index_path
     else
       render 'new'
     end
+
   end
 
 
@@ -39,10 +40,8 @@ class TweetController < ApplicationController
 
 
     def show
-      @tweet = Tweet.find_by(id: params[:id])
-    
-     # @tweets = Tweet.find(params[:id])
 
+      @tweet = Tweet.find_by(id: params[:id])
       @user = User.find_by(id: @tweet.user.id)
     end
 

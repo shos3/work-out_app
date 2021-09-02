@@ -1,4 +1,12 @@
+
+<nav>
+<ul>
 <div class="update"><%= "#{current_user.nickname}" "さんの情報"%></div>
+<li><%= link_to "戻る",plan_index_path, data: { confirm: "更新されていませんがよろしいですか？" } %></li>
+</ul>
+</nav>
+
+
   <div class="upall"> 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -57,22 +65,26 @@
   </div>
   <div class="upall">  
       <th>プロフィール画像</th>
+       <div id="lister" ></div>
       </div>
+
       <div class="exam">
 
       <div class="upall"> 
-      <%= f.file_field :avatar %>
-      <div id="image-list"></div>
+   <br> <br>  <%= f.file_field :avatar %>
+  
       </div>
   </div>
 
+
+
+
 <div class="upall"> 
       <div class="actions">
-      <%= f.submit "内容を更新する" %>
+  <br>  <br>  <%= f.submit "内容を更新する" %>
       </div>
 </div>      
 <% end %>
 <div class="upall"> 
-    <div class="upback"><%= link_to "戻る",plan_index_path, data: { confirm: "更新されていませんがよろしいですか？" } %></div>
 </div>
 <div class="kome">*メールアドレス、現在のパスワードは入力必須で、変更したい箇所を入力してください</div>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :application
   resources :plan, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :tweet, only: [:index, :new, :create, :show, :destroy]
-  resources :messages, only: [:new, :create]
+  resources :messages, only: [:create]
 
  
   post '/tweets/:tweet_id/like' => 'like#create'
