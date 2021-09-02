@@ -5,21 +5,23 @@ class TweetController < ApplicationController
     query = 'SELECT * FROM tweets'
     @tweets = Tweet.find_by_sql(query)
     @tweets = Tweet.all.order(created_at: :desc)
-   
-
-
+  
+    @messages = Message.all
+    @message = Message.new
     
-   
   end
 
 
   def new
    @tweet = Tweet.new
+
+
   end
 
 
   def create
     @tweet = Tweet.new(tweet_params)
+    #binding.pry
     if @tweet.save
       redirect_to tweet_index_path
     else
@@ -27,6 +29,9 @@ class TweetController < ApplicationController
     end
 
   end
+
+
+    
     #@message = Message.new(text: params[:message][:text])
     # binding.pry
     # if @message.save
@@ -34,8 +39,11 @@ class TweetController < ApplicationController
     # end
 
 
-    #def show
-    #end
+    def show
+
+      @tweet = Tweet.find_by(id: params[:id])
+      @user = User.find_by(id: @tweet.user.id)
+    end
 
   def destroy
     @tweet = Tweet.find(params[:id])
@@ -48,4 +56,6 @@ class TweetController < ApplicationController
   def tweet_params
     params.require(:tweet).permit(:text).merge(user_id: current_user.id)
   end
+
+
 end

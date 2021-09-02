@@ -28,10 +28,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    if @user.update(user_params)
+      redirect_to plan_index_path
+    else
+      render 'edit'
+    end
+  end
 
+
+
+  private
+
+  def user_params
+    params.require(:user).permit(:nickname, :avatar, :encrypted_password)
+  end
+end
   # DELETE /resource
   # def destroy
   #   super
@@ -67,4 +79,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-end
+#end

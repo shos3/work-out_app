@@ -95,6 +95,53 @@ a {
 }
 /* トップページここまで*/
 
+/* ユーザー編集画面*/
+.update{
+  display: flex;
+  text-align: center;
+  font-size: 40px;
+  color: rgb(68, 109, 150);
+  border-bottom: solid 3px black;
+}
+
+.upall{
+  background: #fafafa;
+  border: none;
+  /*border-bottom: 2px solid #e9e9e9;*/
+  color: #666;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  height: 50px;
+  width: 100%; 
+  text-align: center;
+  
+}
+
+.upback{
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #FFF;
+  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  transition: .4s;
+}
+
+.upback:hover {
+  background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+}
+
+.holl{
+
+}
+
+
+#lister{
+  margin: 0 auto;
+  width :70px;
+  height:70px;
+}
+/* ユーザー編集画面ここまで*/
 
 /* メインページ */
 .gram{
@@ -107,7 +154,18 @@ a {
   text-decoration: underline;
 }
 
+.tatal{
+  font-size: 30px;
+}
 
+.calendar-title{
+font-size: 20px;
+}
+.counter{
+  font-size: 27px;
+  text-decoration :underline;
+  color: #6e7e16;
+}
 
 nav{
   border-bottom: 1px solid #ccc;
@@ -149,9 +207,12 @@ nav{
 
 
   .carender{
-    color:rgb(135, 106, 240);
+    text-align: center;
+    color:rgb(78, 91, 148);
     font-size :50px;
     }
+
+
   .note{
     color: #666;
   }
@@ -219,7 +280,7 @@ nav{
     .wday-6 {}
   
     .today {
-      background: #52df45
+      background: #c0cfbf
     }
   
     .past {}
@@ -422,6 +483,9 @@ textarea {
   padding: 0;
 }
 
+.name{
+  text-decoration: underline;
+}
 /* トレーニング共有スペースここまで*/
 
 
@@ -438,10 +502,83 @@ textarea {
   text-align: center;
   font-size: 25px;
 }
+
+.what{
+  text-decoration: underline;
+}
 /* トレーニング詳細ここまで */
 
+/* ユーザー詳細ページ */
+.friend{
+  text-align: center;
+}
+
+.gaga{
+height: 100px;
+width: 100px;
+ border-radius: 50%; 
+}
 
 
+.myjoho{
+  font-size: 30px;
+  text-decoration: underline;
+}
+.myage{
+  font-size: 20px;
+}
+
+.mygender{
+font-size: 20px;
+}
+
+.tweetall{
+  font-size: 35px;
+  color: rgb(83, 167, 139);
+  border-bottom: solid 3px black;
+}
+
+.alls{
+
+}
+
+.modoru{
+
+}
+
+ul.cp_list {
+	padding: 0.5em;
+	list-style: none;
+}
+ul.cp_list li {
+	position: relative;
+	padding: 0.5em 1em 0.5em 2.3em;
+	margin-bottom:5px;
+	border-bottom: 1px solid rgba(255,143,0,1);
+}
+ul.cp_list li:after,
+ul.cp_list li:before {
+	content:'';
+	position: absolute;
+	transform: rotate(45deg);
+}
+ul.cp_list li:before {
+	top: 0.7em;
+	left: 0.2em;
+	width: 12px;
+	height: 12px;
+	border:2px solid rgba(255,143,0,1);
+}
+ul.cp_list li:after {
+	top: 0.9em;
+	left: 0.7em;
+	width: 14px;
+	height: 14px;
+	background: rgba(255,143,0,0.5);
+	transform: rotate(60deg);
+}
+
+/* ユーザー詳細ページここまで */
 
 /* mainとfooterのコンテンツ幅を設定 */
 .container {

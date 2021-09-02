@@ -13,4 +13,9 @@ class User < ApplicationRecord
   validates :nickname, presence: true
   validates :age, presence: true
   validates :gender, presence: true
+
+  def posts
+    return Tweet.where(user_id: self.id)
+  end
+
 end

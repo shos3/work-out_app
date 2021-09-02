@@ -3,7 +3,8 @@ class LikeController < ApplicationController
 
   def create
     @like = Like.create(user_id: current_user.id, tweet_id: @tweet.id)
-    redirect_to tweet_index_path
+    @like.create
+      redirect_to tweet_index_path
   end
 
   def destroy

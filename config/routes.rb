@@ -6,13 +6,15 @@ Rails.application.routes.draw do
   root 'application#index'
   resources :application
   resources :plan, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  resources :tweet, only: [:index, :new, :create, :show, :destroy]do
-    resources :message, only: [:create, :destroy]
-end
+  resources :tweet, only: [:index, :new, :create, :show, :destroy]
+  resources :messages, only: [:create]
 
+ 
   post '/tweets/:tweet_id/like' => 'like#create'
   delete '/tweets/:tweet_id/like' => 'like#destroy'
 
+  
+ 
   #get '/tweets/:tweet_id/message' => 'message#index'
   #post '/tweets/:tweet_id/message' => 'like#create'  
 end

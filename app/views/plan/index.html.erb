@@ -24,7 +24,7 @@
     <% else %>      
     <%= image_tag src='5183ef65b82a66cf573f324e59cf028b.png', class: "user-icon", alt: "ユーザーアイコン", :size =>'50x50', class: "gram"%>
     <% end %>   
-<%= "こんにちは" "#{current_user.nickname}" "さん" %>
+<%=link_to "こんにちは" "#{current_user.nickname}" "さん" ,edit_user_registration_path %>
 </div>
 
 <li><%= link_to 'ログアウト', destroy_user_session_path, class: "setbtn" %></li>
@@ -34,12 +34,23 @@
 </nav>
 
 <div class= "carender">
-<h4>カレンダー</h4>
+<h3>MyCalender</h3>
 </div>
-<div class="note">※日付欄はAM:09:00に更新され色が付きます。</div>
-<%#div class="tatal"><%= current_user.nickname %><%#さんの今までの総種目トレーニング数は↓</div>
-<%#= current_user.plans.where('created_at > ?', Date.today).count %>
-<%#= current_user.plan %>
+
+<div class="tatal"%>
+<%#= current_user.nickname %>今までの総種目トレーニング数</div>
+<div class="counter">
+<% current_user.plans.group("YEAR(start_time)").count.each do |year, value| %>
+<%= year %>年..
+<%= value %>回
+<% end %>
+
+<% current_user.plans.group("MONTH(start_time)").count.each do |month, value| %>
+ / <%= month %>月..
+  <%= value %>回 
+<% end %>
+</div>
+<%#= current_user.plans %>
 
 
 
@@ -48,10 +59,13 @@
 
   <tbody>
     <% @plans.each do |plan| %>
+    
     <% end %>
+  
   </tbody>
 <br>
 <%= month_calendar events: @plans do |date, plans| %>
+
   <%= date.day %>
   <% plans.each do |plan| %>
     <div>
@@ -60,6 +74,7 @@
       
     </div>
   <% end %>
+
 <% end %>
 <% end %>
 
@@ -73,6 +88,31 @@
 
 
 
+
+<% @user.plans.each do |user| %>
+				<tbody>
+					<tr>
+						<td><%=user.event%></td>
+						<td><%= user.kg%>kg</td>
+						<td><%= user.number%>回数</td>
+						<td><%= user.set%>セット</td>
+            <td><%= user.time%>時間</td> 
+						<td><%= user.start_time.strftime("%Y-%m-%d %H:%M")%></td>
+						
+					</tr>
+				</tbody>
+			<% end %>
+
+
+
+
+<%#= @user.plans.each do |plans| %>
+<%# @user.plans %>
+<%# end %>
+<br>
+<br>
+<br>
+<div class="note">※日付欄はAM:09:00に更新され色が付きます。</div>
  <footer id="footer">
         <div class="logo">
         </div>
