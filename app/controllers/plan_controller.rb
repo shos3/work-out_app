@@ -29,6 +29,7 @@ class PlanController < ApplicationController
 
   def show
     @plan = Plan.find(params[:id])
+    redirect_to plan_index_path unless current_user.id == @plan.user.id
   end
 
 
