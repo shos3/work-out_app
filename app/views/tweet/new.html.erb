@@ -5,7 +5,7 @@
       <li><%= link_to "戻る", tweet_index_path %></li>
       </ul>
       </nav> 
-      <%= form_with model: @tweet, url: tweet_index_path, method: :post do |t| %>
+      <%= form_with model: @tweet, url: tweet_index_path, method: :post , local: true do |t| %>
       <%= t.text_area :text, id: "text" %>
       <%= t.submit "SEND", class:"savebtn" %>
       </div>

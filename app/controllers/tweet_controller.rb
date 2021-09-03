@@ -6,6 +6,7 @@ class TweetController < ApplicationController
     @tweets = Tweet.find_by_sql(query)
     @tweets = Tweet.all.order(created_at: :desc)
   
+    
     @messages = Message.all
     @message = Message.new
     

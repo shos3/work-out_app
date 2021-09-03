@@ -38,7 +38,7 @@
 </div>
 
 <div class="tatal"%>
-<%#= current_user.nickname %>今までの総種目トレーニング数</div>
+<%#= current_user.nickname %>累計トレーニング数(年間/月別)</div>
 <div class="counter">
 <% current_user.plans.group("YEAR(start_time)").count.each do |year, value| %>
 <%= year %>年..
