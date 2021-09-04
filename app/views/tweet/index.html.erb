@@ -4,7 +4,7 @@
 <ul>
 <div class="words">トレーニング内容の共有スペース</div>
 <li><%= link_to "投稿ページへ",new_tweet_path  %></li>
-<li><%= link_to '戻る', plan_index_path %></li>
+<li><%= link_to '戻る', plan_index_path, method: :get  %></li>
 </ul>
 </nav>
 
@@ -32,27 +32,16 @@
  <%= render partial: "like", locals: { tweet: tweet } %>
 </td>
 
+<%= render partial: "messages/message", locals: { messages: tweet.messages }%>
+<%= form_with model: [tweet, Message], method: :post ,local: true do |f| %>
+<%= f.text_field :content, class: "inputComment" %>
+<%= f.submit "コメントする", class: "submitComment" %>
+    <% end %>
 
-
- <%#= render partial: "messages/new", locals: { message: @messages } %>
-<%#= form_with model: @message do |f| %>
-  <%#= f.text_field :text %>
-  <%#= f.submit '送信' %>
-<%# end %>
-<%#<div id='messages'>
-  <% @messages.reverse_each do |m| %>
-  <%#= m.text %>
-  <%# end %>
-<%#</div>%>
-
-  <%= render partial: "messages/create", locals: { message: @message } %>
-
-
-		<%#= link_to("コメントする", "#", class: "btna") %>	
+  </div>
 		</div>
-
+ <% end %> 
  </div>
-<% end %>
 
  <footer id="footer">
         <div class="logo">

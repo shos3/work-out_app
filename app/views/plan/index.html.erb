@@ -29,7 +29,7 @@
 
 <li><%= link_to 'ログアウト', destroy_user_session_path, class: "setbtn" %></li>
 <li><%= link_to 'トレーニング記録へ',  new_plan_path,method: :get, class: "setbtn" %></li>
-<li><%= link_to 'トレーニング共有一覧へ',   tweet_index_path, class: "setbtn" %></li>
+<li><%= link_to 'トレーニング共有一覧へ',   tweet_index_path, method: :get, class: "setbtn" %></li>
 </ul>
 </nav>
 

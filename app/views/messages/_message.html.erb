@@ -1,0 +1,28 @@
+<% messages.each do |message| %>
+  <li>
+    <div class="topPosition">
+      <%= link_to tweet_index_path(message.user.id), class: "commentUserLink" do %>
+
+
+    <%# if @user.avatar.attached? %>
+    <%#= image_tag tweet.user.avatar, :size =>'50x50', class: "gram" %>
+    <%# else %>      
+    <%#= image_tag src='5183ef65b82a66cf573f324e59cf028b.png', class: "user-icon", alt: "ユーザーアイコン", :size =>'20x20', class: "gram"%>
+    <%# end %>   
+
+
+
+        <p class="commentUserName"><%= "#{message.user.nickname}" "さん："  "#{message.content}"   "|" "#{message.created_at.strftime('%Y/%m/%d')}" %></p>
+      <% end%>
+
+      <% if message.user_id == current_user.id %>
+        <%= link_to  tweet_message_path(message.tweet_id, message.id), method: :delete, class: "deleteCommentLink"  do %>
+       <div class="dede">削除する</div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="bottomPosition">
+      - - - - - - - - - - - - - - - - - -
+    </div>
+  </li>
+<% end %>

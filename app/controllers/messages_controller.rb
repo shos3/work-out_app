@@ -2,13 +2,28 @@ class MessagesController < ApplicationController
 
 
   def create
-    #binding.pry
-    @message = Message.new(text: params[:message][:text] [user_id: current_user.id] [tweet_id: tweet.id])
-    if @message.save
-      ActionCable.server.broadcast 'message_channel', content: @message
-    else
-      redirect_to tweet_index_path
+    @message = Message.create(message_params)
+    respond_to do |format|
+      if @message.save
+        format.html { redirect_back(fallback_location: tweet_index_path) }
+        format.js
+      else
+        format.html { redirect_back(fallback_location: tweet_index_path) }
+      end
     end
   end
+
+  def destroy
+    @tweet = Tweet.find(params[:tweet_id])
+    @message = current_user.messages.find_by(tweet_id: @tweet.id)
+    @message.destroy
+    redirect_back(fallback_location: tweet_index_path)
+  end
+
+  private
+  def message_params
+    params.require(:message).permit(:content).merge(user_id: current_user.id, tweet_id: params[:tweet_id])
+  end
+
 
 end

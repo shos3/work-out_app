@@ -6,10 +6,11 @@ class TweetController < ApplicationController
     @tweets = Tweet.find_by_sql(query)
     @tweets = Tweet.all.order(created_at: :desc)
   
-    
-    @messages = Message.all
+
+   # @tweet = Tweet.find_by(id: params[:id])
+   #@tweet = Tweet.find(params[:id])
     @message = Message.new
-    
+   # @messages = @tweet.messages
   end
 
 
@@ -44,6 +45,9 @@ class TweetController < ApplicationController
 
       @tweet = Tweet.find_by(id: params[:id])
       @user = User.find_by(id: @tweet.user.id)
+
+      @message = Message.new
+    @messages = @tweet.messages
     end
 
   def destroy
