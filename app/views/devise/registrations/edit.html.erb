@@ -11,17 +11,18 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
   </div>
+
   <div class="upall"> 
-      <div class="field">
+    <!--  <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
+      </div>-->
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
   </div>
 
-
+<!--
 <div class="upall"> 
       <div class="field">
         <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
@@ -52,14 +53,14 @@
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
-  </div>
+  </div>-->
 
 
   <div class="upall"> 
       <div class="exam">
-        <%= f.label :ニックネーム %> <em>（最大6文字）</em>
+        <%= f.label :ニックネーム %>
         <div class="upall"> 
-        <%= f.text_field :nickname, autofocus: true, maxlength: "6" %>
+        <%= f.text_field :nickname, autofocus: true %>
         </div>
          </div>  
   </div>
@@ -87,4 +88,4 @@
 <% end %>
 <div class="upall"> 
 </div>
-<div class="kome">*メールアドレス、現在のパスワードは入力必須で、変更したい箇所を入力してください</div>
+<!--<div class="kome">*メールアドレス、現在のパスワードは入力必須で、変更したい箇所を入力してください</div>-->

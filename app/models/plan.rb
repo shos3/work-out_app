@@ -1,11 +1,16 @@
 class Plan < ApplicationRecord
-  validates :event, presence: true
-  validates :kg, presence: true
-  validates :number, presence: true
-  validates :set, presence: true
-  validates :time, presence: true
+
+  with_options presence: true do
+    validates :start_time
+    validates :event
+    validates :kg
+    validates :number
+    validates :set
+    validates :time
+  end
+
   validate :memo
-  validates :start_time, presence: true
+
 
   belongs_to :user
 end

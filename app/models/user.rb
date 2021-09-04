@@ -10,9 +10,12 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-  validates :nickname, presence: true
-  validates :age, presence: true
-  validates :gender, presence: true
+    with_options presence: true do
+      validates :nickname
+      validates :age
+      validates :gender
+    end
+    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i } # 半角英数混合でないといけない。
 
   def posts
     return Tweet.where(user_id: self.id)
