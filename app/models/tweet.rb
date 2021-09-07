@@ -9,6 +9,10 @@ class Tweet < ApplicationRecord
     likes.where(user_id: user.id).exists?
   end
 
+
+
+
+
   validates :text, presence: true
 end
 

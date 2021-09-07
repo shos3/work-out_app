@@ -15,10 +15,14 @@ class User < ApplicationRecord
       validates :age
       validates :gender
     end
-    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i } # 半角英数混合でないといけない。
+    validates :password,on: :create, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i } # 半角英数混合でないといけない。
 
   def posts
     return Tweet.where(user_id: self.id)
   end
+
+
+
+
 
 end

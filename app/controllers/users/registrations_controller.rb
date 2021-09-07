@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+
   def after_sign_up_path_for(_resource)
     plan_index_path
   end
@@ -29,6 +30,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
+    #binding.pry
+    
     if @user.update(user_params)
       redirect_to plan_index_path
     else
@@ -37,6 +40,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
 
+
+ 
 
   private
 

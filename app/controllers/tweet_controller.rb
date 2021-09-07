@@ -1,6 +1,7 @@
 class TweetController < ApplicationController
   before_action :authenticate_user!
 
+
   def index
     query = 'SELECT * FROM tweets'
     @tweets = Tweet.find_by_sql(query)
@@ -11,6 +12,7 @@ class TweetController < ApplicationController
    #@tweet = Tweet.find(params[:id])
     @message = Message.new
    # @messages = @tweet.messages
+  
   end
 
 
@@ -42,7 +44,7 @@ class TweetController < ApplicationController
 
 
     def show
-
+      
       @tweet = Tweet.find_by(id: params[:id])
       @user = User.find_by(id: @tweet.user.id)
 
@@ -55,6 +57,20 @@ class TweetController < ApplicationController
     @tweet.destroy
     redirect_to tweet_index_path
   end
+
+
+
+  def search
+    @tweets = Tweet.search(params[:keyword])
+  end
+
+
+
+  def rank
+    @month_user_plan_ranks = User.where(id: Plan.group(:user_id).where(created_at: Time.current.all_month).order('count(user_id) desc').pluck(:user_id))
+  end
+
+
 
   private
 
