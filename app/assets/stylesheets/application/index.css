@@ -24,17 +24,8 @@ a {
   width: 100%;
 }
 
-footer{
-  background: #023300;
-  text-align: center;
-  padding: 26px 0;
-}
-footer p{
-color: #fff;
-font-size: 00.875rem;
-text-align: center;
-margin: 0 auto;
-}
+
+
 /*トップページ*/
 .top{
   font-weight: bold;
