@@ -1,3 +1,4 @@
+<div class="planindex">
 <link rel="stylesheet" href="plans/index.css">
 
 
@@ -27,7 +28,7 @@
     <% else %>      
     <%= image_tag src='5183ef65b82a66cf573f324e59cf028b.png', class: "user-icon", alt: "ユーザーアイコン", :size =>'50x50', class: "gram"%>
     <% end %>   
-<%=link_to "こんにちは" "#{current_user.nickname}" "さん" ,edit_user_registration_path %>
+<%=link_to "こんにちは、" "#{current_user.nickname}" "さん" ,edit_user_registration_path %>
 </div>
 
 <li><%= link_to 'ログアウト', destroy_user_session_path, class: "setbtn" %></li>
@@ -36,9 +37,26 @@
 </ul>
 </nav>
 </div>
-<div class= "carender">
-<h3>MyCalender</h3>
 </div>
+
+<div class="maycare">MyCalender <%= image_tag src='icon_139421_64.png', class: "user-icon", alt: "ユーザーアイコン", :size =>'50x50', class: "gram"%></h3></div>
+
+
+<div class="box">
+
+ 
+<div class="stopto">
+ <div id="stopwatch">00:00.000</div>
+    <div id="buttons">
+        <button type="button" id="reset" class="button">リセット</button>
+        <button type="button" id="start" class="button">スタート</button>
+    </div>
+    </div>
+    <script src="js/time.js"></script>
+<!--<audio src="sound/tin1.mp3" id = "sound"></audio>-->
+
+
+
 
 <div class="tatal"%>
 <%#= current_user.nickname %>累計トレーニング数(年間/月別)</div>
@@ -58,6 +76,11 @@
 
 
 
+  <div class="bgImg src1"></div>
+  <div class="bgImg src2"></div>
+  <div class="bgImg src3"></div>
+  <div class="bgImg src4"></div>
+</div>
 
 
   <tbody>
@@ -85,26 +108,21 @@
 
 
 
-
-
-
-
-
-
-
-<% @user.plans.each do |user| %>
+<!--<% @user.plans.each do |user| %>
 				<tbody>
 					<tr>
-						<td><%=user.event%></td>
+						<td><%= user.event%></td>
 						<td><%= user.kg%>kg</td>
 						<td><%= user.number%>回数</td>
 						<td><%= user.set%>セット</td>
             <td><%= user.time%>時間</td> 
 						<td><%= user.start_time.strftime("%Y-%m-%d %H:%M")%></td>
-						
-					</tr>
-				</tbody>
-			<% end %>
+	 <% end %> -->
+
+
+
+
+
 
 
 
@@ -112,12 +130,9 @@
 <%#= @user.plans.each do |plans| %>
 <%# @user.plans %>
 <%# end %>
-<br>
-<br>
-<br>
-<div class="note">※日付欄はAM:09:00に更新され色が付きます。</div>
  <footer id="footer">
         <div class="logo">
         </div>
         <p>&copy; shos3 work out</p>
       </footer>
+
