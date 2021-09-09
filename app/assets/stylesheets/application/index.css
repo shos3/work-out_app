@@ -59,12 +59,13 @@ footer p{
 
 .toretore h6{
   position: absolute;
-  top: -40%;
+  top: 30%;
   left: 50%;
+  margin-top:-10px;
   -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(50%,50%);
+  -webkit-transform: translate(60%,40%);
   transform: translate(-50%,-500%);
-  margin:0;
+
   padding:0;
   font-size: 80px;
 }
@@ -852,19 +853,23 @@ main {
 
 
 .box .src1 {
-  background-image : url('big-air-g46d355884_640.jpeg');
+  background-image: image-url("big-air-g46d355884_640.jpeg");
+  background-size: 80%;
 }
 .box .src2 {
-  background-image : url('man-4800810_1280.webp');
+  background-image: image-url('man-4800810_1280.webp');
+  background-size: 80%;
   animation-delay  : 5s;
 }
 .box .src3 {
-  background-image : url('snowboards-227543_1280.jpeg');
+  background-image: image-url('snowboards-227543_1280.jpeg');
+  background-size: 80%;
   animation-delay  : 10s;
 }
 .box .src4 {
-  background-image : url('adventure-g47f897a87_640.jpg');
+  background-image: image-url('adventure-g47f897a87_640.jpg');
   animation-delay  : 15s;
+  background-size: 80%;
 }
 
 @keyframes bgAnime {
