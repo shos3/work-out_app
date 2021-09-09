@@ -853,21 +853,21 @@ main {
 
 
 .box .src1 {
-  background-image: image-url("big-air-g46d355884_640.png");
+  background-image: url(big-air-g46d355884_640.png);
   background-size: 80%;
 }
 .box .src2 {
-  background-image: image-url("'man-4800810_1280.png");
+  background-image: url(man-4800810_1280.png);
   background-size: 80%;
   animation-delay: 5s;
 }
 .box .src3 {
-  background-image: image-url("snowboards-227543_1280.png");
+  background-image: url(snowboards-227543_1280.png);
   background-size: 80%;
-  animation-delay: 10s;
+  animation-delay  : 10s;
 }
 .box .src4 {
-  background-image: image-url("adventure-g47f897a87_640.png");
+  background-image: url(adventure-g47f897a87_640.png);
   animation-delay  : 15s;
   background-size: 80%;
 }
