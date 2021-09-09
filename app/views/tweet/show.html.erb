@@ -5,6 +5,10 @@
 </nav>
 
 
+
+
+
+
 <div class="friend">
 
 <% if @tweet.user.avatar.attached? %>
@@ -26,9 +30,15 @@
         <div class="mypage"><%= "性別:" "#{@tweet.user.gender}"  %></div>
         </div><br>
 
+
+
+
 <div class="tweetall">
 投稿一覧
 </div>
+
+
+
 <div class="alls">
 <ul class="cp_list">
  <% @user.tweets.each do |post| %>
