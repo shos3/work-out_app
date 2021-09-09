@@ -108,9 +108,9 @@ footer p{
   padding: .25em 5em;
   text-decoration: none;
   color: #FFF;
-  background:goldenrod;/*背景色*/
-  border-bottom: solid 2px #d27d00;/*少し濃い目の色に*/
-  border-radius: 4px;/*角の丸み*/
+  background:goldenrod;
+  border-bottom: solid 2px #d27d00;
+  border-radius: 4px;
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
   font-weight: bold;
   border-radius: 100vh;
@@ -124,9 +124,9 @@ footer p{
   padding: 0.25em 5em;
   text-decoration: none;
   color: #FFF;
-  background:goldenrod;/*背景色*/
-  border-bottom: solid 2px #d27d00;/*少し濃い目の色に*/
-  border-radius: 4px;/*角の丸み*/
+  background:goldenrod;
+  border-bottom: solid 2px #d27d00;
+  border-radius: 4px;
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
   font-weight: bold;
   border-radius: 100vh;
@@ -140,9 +140,9 @@ footer p{
   padding: 0.25em 5em;
   text-decoration: none;
   color: rgb(10, 8, 8);
-  background:rgb(252, 111, 30);/*背景色*/
-  border-bottom: solid 2px #d27d00;/*少し濃い目の色に*/
-  border-radius: 4px;/*角の丸み*/
+  background:rgb(252, 111, 30);
+  border-bottom: solid 2px #d27d00;
+  border-radius: 4px;
   box-shadow: inset 0 2px 0 rgba(236, 20, 20, 0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
   font-weight: bold;
   border-radius: 100vh;
@@ -170,7 +170,6 @@ footer p{
 .upall{
   background: #fafafa;
   border: none;
-  /*border-bottom: 2px solid #e9e9e9;*/
   color: #666;
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
@@ -830,7 +829,7 @@ main {
 
 
 
-/*あああ*/
+/*アニメーション*/
 .box {
   width  : 100vw;
   height     :70vh;
@@ -848,23 +847,23 @@ main {
   right      : 0;
   opacity    : 0;
   background-size: cover;
-  animation  : bgAnime 20s infinite;   /* 4画像 × 各5s = 20s */
+  animation  : bgAnime 20s infinite;
 }
 
-/* --- 段差で背景画像のアニメーションを実行 ----------------- */
+
 .box .src1 {
-  background-image : url('big-air-g46d355884_640.jpeg');   /* 背景の画像を指定 */
+  background-image : url('big-air-g46d355884_640.jpeg');
 }
 .box .src2 {
-  background-image : url('man-4800810_1280.webp');   /* 背景の画像を指定 */
+  background-image : url('man-4800810_1280.webp');
   animation-delay  : 5s;
 }
 .box .src3 {
-  background-image : url('snowboards-227543_1280.jpeg');   /* 背景の画像を指定 */
+  background-image : url('snowboards-227543_1280.jpeg');
   animation-delay  : 10s;
 }
 .box .src4 {
-  background-image : url('adventure-g47f897a87_640.jpg');   /* 背景の画像を指定 */
+  background-image : url('adventure-g47f897a87_640.jpg');
   animation-delay  : 15s;
 }
 
