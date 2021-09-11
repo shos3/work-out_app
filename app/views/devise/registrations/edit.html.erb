@@ -1,58 +1,16 @@
 
-<nav>
-<ul>
-<div class="update"><%= "#{current_user.nickname}" "さんの情報"%></div>
-<li><%= link_to "戻る",plan_index_path, data: { confirm: "更新されていませんがよろしいですか？" } %></li>
-</ul>
-</nav>
+  <nav>
+    <ul>
+    <div class="update"><%= "#{current_user.nickname}" "さんの情報"%></div>
+    <li><%= link_to "戻る",plan_index_path, data: { confirm: "更新されていませんがよろしいですか？" } %></li>
+    </ul>
+  </nav>
 
 
   <div class="upall"> 
-     <%= form_for(resource, as: resource_name, url: user_registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= form_for(resource, as: resource_name, url: user_registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
   </div>
-<!--
- <div class="upall"> 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
- <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-  </div>-->
-
-<!--
-<div class="upall"> 
-      <div class="field">
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-        <%= f.password_field :current_password, autocomplete: "current-password" %>
-        </div>
-  </div>-->
-
-
-
-<!--
-  <div class="upall">  
-      <div class="field">
-        <%= f.label :password %>
-        <%= f.password_field :password, autocomplete: "new-password" %>
-        <% if @minimum_password_length %>
-       
-        <% end %>
-         <%= f.label :password %>
-        </div> 
-       <div class="upall"> 
-        <%= f.password_field :password, autocomplete: "new-password" %>
-      </div>
-  </div>
-  
-  <div class="upall">
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
-  </div>-->
 
 
   <div class="upall"> 
@@ -61,27 +19,25 @@
         <div class="upall"> 
         <%= f.text_field :nickname, autofocus: true %>
         </div>
-         </div>  
+      </div>  
   </div>
+
   <div class="upall">  
       <th>プロフィール画像</th>
-       <div id="lister" ></div>
-      </div>
-
-      <div class="exam">
-
-      <div class="upall"> 
-   <br> <br>  <%= f.file_field :avatar %>
-  
-      </div>
+      <div id="lister" ></div>
   </div>
 
-
-<div class="upall"> 
-      <div class="actions">
-  <br>  <br>  <%= f.submit "内容を更新する" %>
+    <div class="exam">
+      <div class="upall"> 
+      <br> <br>  <%= f.file_field :avatar %>
       </div>
-</div>      
-<% end %>
+    </div>
+
+    <div class="upall"> 
+      <div class="actions">
+      <br><br>  <%= f.submit "内容を更新する" %>
+      </div>
+    </div>
+  <% end %>
 <div class="upall"> 
 </div>

@@ -1,64 +1,44 @@
 
-<div class="tweetindex">
-<nav>
-<ul>
-<div class="words">トレーニング内容の共有スペース</div>
-<li><%= link_to "投稿ページへ",new_tweet_path  %></li>
-<li><%= link_to '戻る', plan_index_path, method: :get  %></li>
-</ul>
-</nav>
-</div>
-
-
-<div class="message">投稿メッセージ一覧</div>
-
-
-
-
-
-
-
-
-
-
-
-
-<div class = "center">
-<% @tweets.each do |tweet| %>
- <div>
-    <div class="boxa">
-    
-    <% if tweet.user.avatar.attached? %>
-    <%= image_tag tweet.user.avatar, :size =>'50x50', class: "gram" %>
-    <% else %>      
-    <%= image_tag src='5183ef65b82a66cf573f324e59cf028b.png', class: "user-icon", alt: "ユーザーアイコン", :size =>'50x50', class: "gram"%>
-    <% end %>   
-    <%#= image_tag @user.avatar, :size =>'50x50' %>
-		<div class="name"><%= link_to ("#{tweet.user.nickname}" ) ,tweet_path(tweet.id) %></div>
-    <div class="tweet"><%=  "#{tweet.text}"  %>                     <%= "(" "#{tweet.created_at.strftime('%d日 %H:%M')}" ")" %>	<% if current_user.id == tweet.user_id %>
-		<%= link_to("削除する", tweet_path(tweet.id), method: :delete, class: "btna") %>
-		<% end %></div>
-		<%#= image_tag "heart.png", class:"mai",width:"30",height:"30" %>
-    
-
-  
-<td id="like-<%= tweet.id %>">
- <%= render partial: "like", locals: { tweet: tweet } %>
-</td>
-
-<%= render partial: "messages/message", locals: { messages: tweet.messages }%>
-<%= form_with model: [tweet, Message], method: :post ,local: true do |f| %>
-<%= f.text_field :content, class: "inputComment" %>
-<%= f.submit "コメントする" , id: "asubmit", class: "submitComment" %>
-    <% end %>
-
+  <div class="tweetindex">
+    <nav>
+        <ul>
+        <div class="words">トレーニング内容の共有スペース</div>
+        <li><%= link_to "投稿ページへ",new_tweet_path  %></li>
+        <li><%= link_to '戻る', plan_index_path, method: :get  %></li>
+        </ul>
+    </nav>
   </div>
-		</div>
- <% end %> 
- </div>
+    <div class="message">投稿メッセージ一覧</div>
+    <div class = "center">
+      <% @tweets.each do |tweet| %>
+    <div>
+    <div class="boxa">
+        <% if tweet.user.avatar.attached? %>
+        <%= image_tag tweet.user.avatar, :size =>'50x50', class: "gram" %>
+        <% else %>      
+        <%= image_tag src='5183ef65b82a66cf573f324e59cf028b.png', class: "user-icon", alt: "ユーザーアイコン", :size =>'50x50', class: "gram"%>
+        <% end %>   
+          <div class="name"><%= link_to ("#{tweet.user.nickname}" ) ,tweet_path(tweet.id) %></div>
+          <div class="tweet"><%=  "#{tweet.text}"  %>                     <%= "(" "#{tweet.created_at.strftime('%d日 %H:%M')}" ")" %>	<% if current_user.id == tweet.user_id %>
+          <%= link_to("削除する", tweet_path(tweet.id), method: :delete, class: "btna") %>
+          <% end %></div>
 
- <footer id="footer">
+      <td id="like-<%= tweet.id %>">
+          <%= render partial: "like", locals: { tweet: tweet } %>
+      </td>
+
+        <%= render partial: "messages/message", locals: { messages: tweet.messages }%>
+        <%= form_with model: [tweet, Message], method: :post ,local: true do |f| %>
+        <%= f.text_field :content, class: "inputComment" %>
+        <%= f.submit "コメントする" , id: "asubmit", class: "submitComment" %>
+        <% end %>
+    </div>
+		</div>
+      <% end %> 
+  </div>
+
+  <footer id="footer">
         <div class="logo">
         </div>
         <p>&copy; shos3 work out</p>
-      </footer>
+  </footer>

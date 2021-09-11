@@ -9,42 +9,27 @@
   </head>
 
   <body>
-  <div class="example">
-  <div class= "top"><p>WORKOUT</p></div>
-  
-  <li><%= link_to 'ログイン', new_user_session_path, class: "topbtn" %></li>
- 
-      <li><%= link_to '新規登録', new_user_registration_path, class: "topsign" %>
-    <div id="mainvisual">
-      <%= image_tag "photo-1476480862126-209bfaa8edc8.jpeg", class:"main" %>
-  </div>
+    <div class="example">
+    <div class= "top"><p>WORKOUT</p></div>
+    <li><%= link_to 'ログイン', new_user_session_path, class: "topbtn" %></li>
+    <li><%= link_to '新規登録', new_user_registration_path, class: "topsign" %>
+      <div id="mainvisual">
+        <%= image_tag "photo-1476480862126-209bfaa8edc8.jpeg", class:"main" %>
+      </div>
 
-  <div class="toretore">
- <div class="torememo"><h6>とれメモ</h6></div></div>
+      <div class="toretore">
+        <div class="torememo"><h6>とれメモ</h6></div></div>
 
-
- <li> <%= link_to 'ゲストログイン', application_guest_sign_in_path, method: :post, class: "testgest" %></li> <%#ゲスト%>
+        <li> <%= link_to 'ゲストログイン', application_guest_sign_in_path, method: :post, class: "testgest" %></li>
     <div class="container">
       <main>
-        <section id="concept" class="content">
+          <section id="concept" class="content">
           <div class="img">
-          <%#= image_tag "photo-1620188526357-ff08e03da266.jpeg", class:"sab-one" %>
-        <!--  </div>
-          <div class="text">
-            <h2 class="section-title">~~~~~トレーニングをすることで~~~~~</h2>
-            <p>・基礎代謝がアップして太りにくい体に</p>
-            <p>・美しい姿勢をキープできる</p>
-            <p>・有酸素運動の効果を上げる</p>
-            <p>・こり・むくみ・冷え性の改善</p> 
-            <p>・睡眠の質を上げる</p>
-            <p>・ストレス解消</p>
-          </div>-->
-        </section>
+          </section>
       </main>
-  
         <div class="logos">&copy;shos3.workout</div>
-    </div>
-    </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

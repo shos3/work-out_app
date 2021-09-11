@@ -1,120 +1,113 @@
-<p id="notice"><%= notice %></p>
-<nav>
-<ul>
-<div class="words">記録と内容</div>
-<li><%= link_to '戻る', plan_index_path %></li>
-</ul>
-</nav>
-
-
-
+    <p id="notice"><%= notice %></p>
+    <nav>
+      <ul>
+        <div class="words">記録と内容</div>
+        <li><%= link_to '戻る', plan_index_path %></li>
+      </ul>
+    </nav>
 
 <div class="all">
-  <%= form_with model:@plan, url: plan_index_path, method: :post, local: true do |f| %>
-    <%= f.label :日付、時間を選択してください, class: 'date' %>
+      <%= form_with model:@plan, url: plan_index_path, method: :post, local: true do |f| %>
+      <%= f.label :日付、時間を選択してください, class: 'date' %>
 
 
-<div class="time">
-    <%= f.datetime_select :start_time %>
-<div class="muscle">
-    <%= f.label :トレーニング内容, class: 'event' %>
+    <div class="time">
+      <%= f.datetime_select :start_time %>
+        <div class="muscle">
+          <%= f.label :トレーニング内容, class: 'event' %>
+        </div>
+          <div class="eventall">
+            <select name="plan[event]">
+                <optgroup label="胸">
+                  <option value="ベンチプレス">ベンチプレス</option>
+                  <option value="ダンベルフライ">ダンベルフライ</option>
+                  <option value="インクライン">インクライン</option>
+                  <option value="ダンベルベンチプレス">ダンベルベンチプレス</option>
+                  <option value="腕立て">腕立て</option>
+                  <option value="胸/その他">胸/その他</option> 
+                </optgroup>
+                <optgroup label="足">
+                  <option value="スクワット">スクワット</option>
+                  <option value="ランジ">ランジ</option>
+                  <option value="レッグプレス">レッグプレス</option>
+                  <option value="レッグカール">レッグカール</option>
+                  <option value="カーフレイズ">カーフレイズ</option>
+                  <option value="足/その他">足/その他</option>
+                </optgroup>
+                <optgroup label="上腕二頭筋">
+                  <option value="バーベル・カール">バーベル・カール</option>
+                  <option value="インクライン・ダンベルカール">インクライン・ダンベルカール</option>
+                  <option value="ダンベル・カール">ダンベル・カール</option>
+                  <option value="ハンマーカール">ハンマーカール</option>
+                  <option value="ケーブル・カール">ケーブル・カール</option>
+                  <option value="上腕二頭筋/その他">上腕二頭筋/その他</option>
+                </optgroup>
+                <optgroup label="上腕三頭筋">
+                  <option value="バーベル・トライセプス・エクステンション">バーベル・トライセプス・エクステンション</option>
+                  <option value="サイド・トライセプス・エクステンション">サイド・トライセプス・エクステンション</option>
+                  <option value="ケーブル・トライセプス・エクステンション">ケーブル・トライセプス・エクステンション</option>
+                  <option value="リバースプッシュアップ">リバースプッシュアップ</option>
+                  <option value="ナローグリップ・ベンチプレス">ナローグリップ・ベンチプレス</option>
+                  <option value="上腕三頭筋/その他">上腕三頭筋/その他</option>
+                </optgroup>
+                <optgroup label="前腕">
+                  <option value="リスト・カール">リスト・カール</option>
+                  <option value="リバース・リスト・カール">リバース・リスト・カール</option>
+                  <option value="前腕/その他">前腕/その他</option>
+                </optgroup>
+                <optgroup label="肩">
+                  <option value="フロント・レイズ">フロント・レイズ</option>
+                  <option value="リア・レイズ">リア・レイズ</option>
+                  <option value="フロント・プレス">フロント・プレス</option>
+                  <option value="サイドレイズ">サイドレイズ</option>
+                  <option value="ショルダー・プレス">ショルダー・プレス</option>
+                  <option value="バック・プレス">バック・プレス</option>
+                  <option value="肩/その他">肩/その他</option>
+                </optgroup>
+                <optgroup label="背中">
+                  <option value="デッドリフト">デッドリフト</option>
+                  <option value="バックレイズ">バックレイズ</option>
+                  <option value="背中/その他">背中/その他</option>
+                </optgroup>
+                <optgroup label="腹">
+                  <option value="クランチ">クランチ</option>
+                  <option value="シザーズ">シザーズ</option>
+                  <option value="Vシット">Vシット</option>
+                  <option value="ツイスト">ツイスト</option>
+                  <option value="ドラゴン・フラッグ">ドラゴン・フラッグ</option>
+                  <option value="腹/その他">腹/その他</option>
+                </optgroup>
+                </optgroup>
+                <optgroup label="お尻">
+                  <option value="ヒップリフト">ヒップリフト</option>
+                  <option value="ランジ">ランジ</option>
+                  <option value="スクワット">スクワット</option>
+                  <option value="バック・キック">バック・キック</option>
+                  <option value="お尻/その">お尻/その他</option>
+                </optgroup>
+                </optgroup>
+                  <optgroup label="ランニング">
+                  <option value="ランニング">ランニング</option>
+                </optgroup>
+              </select>
+      <div class="allall">               
+          <%= f.number_field :kg,{min: 0, max: 200}%>
+          <%= f.label :kg %>
+            <%= f.number_field :number,{min: 0, max: 50}%>
+            <%= f.label :回 %>
+              <%= f.number_field :set,{min: 0, max: 10}%>
+              <%= f.label :set %>
+                <%= f.number_field :time,{min: 0, max: 300}%>
+                <%= f.label :分 %>
+      </div>
     </div>
-    <div class="eventall">
-          <select name="plan[event]">
-              <optgroup label="胸">
-                <option value="ベンチプレス">ベンチプレス</option>
-                <option value="ダンベルフライ">ダンベルフライ</option>
-                <option value="インクライン">インクライン</option>
-                <option value="ダンベルベンチプレス">ダンベルベンチプレス</option>
-                <option value="腕立て">腕立て</option>
-                <option value="胸/その他">胸/その他</option> 
-              </optgroup>
-              <optgroup label="足">
-                <option value="スクワット">スクワット</option>
-                <option value="ランジ">ランジ</option>
-                <option value="レッグプレス">レッグプレス</option>
-                <option value="レッグカール">レッグカール</option>
-                <option value="カーフレイズ">カーフレイズ</option>
-                <option value="足/その他">足/その他</option>
-              </optgroup>
-              <optgroup label="上腕二頭筋">
-                <option value="バーベル・カール">バーベル・カール</option>
-                <option value="インクライン・ダンベルカール">インクライン・ダンベルカール</option>
-                <option value="ダンベル・カール">ダンベル・カール</option>
-                <option value="ハンマーカール">ハンマーカール</option>
-                <option value="ケーブル・カール">ケーブル・カール</option>
-                <option value="上腕二頭筋/その他">上腕二頭筋/その他</option>
-              </optgroup>
-              <optgroup label="上腕三頭筋">
-                <option value="バーベル・トライセプス・エクステンション">バーベル・トライセプス・エクステンション</option>
-                <option value="サイド・トライセプス・エクステンション">サイド・トライセプス・エクステンション</option>
-                <option value="ケーブル・トライセプス・エクステンション">ケーブル・トライセプス・エクステンション</option>
-                <option value="リバースプッシュアップ">リバースプッシュアップ</option>
-                <option value="ナローグリップ・ベンチプレス">ナローグリップ・ベンチプレス</option>
-                <option value="上腕三頭筋/その他">上腕三頭筋/その他</option>
-              </optgroup>
-              <optgroup label="前腕">
-                <option value="リスト・カール">リスト・カール</option>
-                <option value="リバース・リスト・カール">リバース・リスト・カール</option>
-                <option value="前腕/その他">前腕/その他</option>
-              </optgroup>
-              <optgroup label="肩">
-                <option value="フロント・レイズ">フロント・レイズ</option>
-                <option value="リア・レイズ">リア・レイズ</option>
-                <option value="フロント・プレス">フロント・プレス</option>
-                <option value="サイドレイズ">サイドレイズ</option>
-                <option value="ショルダー・プレス">ショルダー・プレス</option>
-                <option value="バック・プレス">バック・プレス</option>
-                <option value="肩/その他">肩/その他</option>
-              </optgroup>
-              <optgroup label="背中">
-                <option value="デッドリフト">デッドリフト</option>
-                <option value="バックレイズ">バックレイズ</option>
-                <option value="背中/その他">背中/その他</option>
-              </optgroup>
-              <optgroup label="腹">
-                <option value="クランチ">クランチ</option>
-                <option value="シザーズ">シザーズ</option>
-                <option value="Vシット">Vシット</option>
-                <option value="ツイスト">ツイスト</option>
-                <option value="ドラゴン・フラッグ">ドラゴン・フラッグ</option>
-                <option value="腹/その他">腹/その他</option>
-              </optgroup>
-              </optgroup>
-              <optgroup label="お尻">
-                <option value="ヒップリフト">ヒップリフト</option>
-                <option value="ランジ">ランジ</option>
-                <option value="スクワット">スクワット</option>
-                <option value="バック・キック">バック・キック</option>
-                <option value="お尻/その">お尻/その他</option>
-              </optgroup>
-              </optgroup>
-                <optgroup label="ランニング">
-                <option value="ランニング">ランニング</option>
-              </optgroup>
-            </select>
- <div class="allall">               
-      <%= f.number_field :kg,{min: 0, max: 200}%>
-      <%= f.label :kg %>
-          <%= f.number_field :number,{min: 0, max: 50}%>
-          <%= f.label :回 %>
-            <%= f.number_field :set,{min: 0, max: 10}%>
-            <%= f.label :set %>
-              <%= f.number_field :time,{min: 0, max: 300}%>
-              <%= f.label :分 %>
- </div>         
-</div>
             <div class="memo">メモ欄</div>
 <%= f.text_area :memo, size: "80x4" %>
 </p>
-   <!-- <input data-repeater-delete type="button" value="削除"/>       
-    <p><input data-repeater-create type="button" value="入力フォームを追加"/></p>-->
 
   <p><%= f.submit 'トレーニングを記録する', class:"savebtn" %></p>
-  <% end %>
- </div> 
-  <%#</form>%>
-
+    <% end %>
+    </div> 
 
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="jquery.repeater.js"></script>

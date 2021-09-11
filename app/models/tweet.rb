@@ -11,15 +11,6 @@ class Tweet < ApplicationRecord
 
 
 
-
-
   validates :text, presence: true
 end
-
-
-
-
-
-# ApplicationRecord
-# ActiveRecord::Base
 

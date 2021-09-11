@@ -1,28 +1,25 @@
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
+    <nav>
+      <ul>
+      <div class="words">トレーニング内容</div>
+      <li><%= link_to '削除する', plan_path, method: :delete %></li>
+      <li><%= link_to '戻る', plan_index_path %></li>
+      </ul>
+    </nav>
 
-
-
-<nav>
-<ul>
-<div class="words">トレーニング内容</div>
-<li><%= link_to '削除する', plan_path, method: :delete %></li>
-<li><%= link_to '戻る', plan_index_path %></li>
-</ul>
-</nav>
-
-  <div class="record"><%= "#{@plan.start_time.to_s(:datetime_jp)}" %></div> 
-  <br>
-  <div class="what">
-    <div class="record">
-    <%= "#{@plan.event}"  %></div></div>
-    <br>
-      <div class="record">重量：
-      <%= "#{@plan.kg}" "kg" %></div><br>
-          <div class="record">回数：
-          <%= "#{@plan.number}" "回" %></div><br>
-              <div class="record">セット数：
-              <%= "#{@plan.set}" "セット" %></div><br>
-                  <div class="record">時間：
-                  <%= "#{@plan.time}" "分" %></div><br>
-                      <div class="nott">メモ欄：
-                      <%= "#{@plan.memo}" %> </div>
+    <div class="record"><%= "#{@plan.start_time.to_s(:datetime_jp)}" %></div> 
+      <br>
+      <div class="what">
+      <div class="record">
+        <%= "#{@plan.event}"  %></div></div>
+      <br>
+          <div class="record">重量：
+          <%= "#{@plan.kg}" "kg" %></div><br>
+              <div class="record">回数：
+              <%= "#{@plan.number}" "回" %></div><br>
+                  <div class="record">セット数：
+                  <%= "#{@plan.set}" "セット" %></div><br>
+                      <div class="record">時間：
+                      <%= "#{@plan.time}" "分" %></div><br>
+                          <div class="nott">メモ欄：
+                          <%= "#{@plan.memo}" %> </div>
