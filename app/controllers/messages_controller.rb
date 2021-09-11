@@ -1,6 +1,4 @@
 class MessagesController < ApplicationController
-
-
   def create
     @message = Message.create(message_params)
     respond_to do |format|
@@ -21,9 +19,8 @@ class MessagesController < ApplicationController
   end
 
   private
+
   def message_params
     params.require(:message).permit(:content).merge(user_id: current_user.id, tweet_id: params[:tweet_id])
   end
-
-
 end

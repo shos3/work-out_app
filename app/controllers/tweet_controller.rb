@@ -1,7 +1,6 @@
 class TweetController < ApplicationController
   before_action :authenticate_user!
 
-
   def index
     query = 'SELECT * FROM tweets'
     @tweets = Tweet.find_by_sql(query)
@@ -9,11 +8,9 @@ class TweetController < ApplicationController
     @message = Message.new
   end
 
-
   def new
     @tweet = Tweet.new
   end
-
 
   def create
     @tweet = Tweet.new(tweet_params)
@@ -24,12 +21,11 @@ class TweetController < ApplicationController
     end
   end
 
-
   def show
-      @tweet = Tweet.find_by(id: params[:id])
-      @user = User.find_by(id: @tweet.user.id)
-      @message = Message.new
-      @messages = @tweet.messages
+    @tweet = Tweet.find_by(id: params[:id])
+    @user = User.find_by(id: @tweet.user.id)
+    @message = Message.new
+    @messages = @tweet.messages
   end
 
   def destroy
@@ -38,12 +34,9 @@ class TweetController < ApplicationController
     redirect_to tweet_index_path
   end
 
-
-
   def search
     @tweets = Tweet.search(params[:keyword])
   end
-
 
   private
 

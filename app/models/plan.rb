@@ -1,5 +1,4 @@
 class Plan < ApplicationRecord
-
   with_options presence: true do
     validates :start_time
     validates :event
@@ -10,7 +9,6 @@ class Plan < ApplicationRecord
   end
 
   validate :memo
-
 
   belongs_to :user
 end

@@ -5,7 +5,6 @@ class Users::SessionsController < Devise::SessionsController
     plan_index_path
   end
 
-
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in

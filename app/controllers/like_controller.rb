@@ -4,7 +4,7 @@ class LikeController < ApplicationController
   def create
     @like = Like.create(user_id: current_user.id, tweet_id: @tweet.id)
     @like.created_at
-    redirect_to tweet_index_path 
+    redirect_to tweet_index_path
   end
 
   def destroy

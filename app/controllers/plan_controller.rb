@@ -12,8 +12,6 @@ class PlanController < ApplicationController
     @plan = Plan.new
   end
 
-
-
   def create
     @plan = Plan.new(plan_params)
     if @plan.save
@@ -23,19 +21,16 @@ class PlanController < ApplicationController
     end
   end
 
-
   def show
     @plan = Plan.find(params[:id])
     redirect_to plan_index_path unless current_user.id == @plan.user.id
   end
-
 
   def destroy
     @plan = Plan.find(params[:id])
     @plan.destroy
     redirect_to plan_index_path
   end
-
 
   private
 
